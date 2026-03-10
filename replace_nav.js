@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact Us - Africentric Tech Hub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Material+Icons&display=swap" rel="stylesheet"/>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: { extend: { colors: { primary: "#FF0000", "background-light": "#FFFFFF", "background-dark": "#0A0A0A" }, fontFamily: { display: ["Plus Jakarta Sans", "sans-serif"], sans: ["Plus Jakarta Sans", "sans-serif"] } } }
-      };
-    </script>
-<style>
-        .glow-input:focus { box-shadow: 0 0 15px rgba(255,0,0,0.2); border-bottom-color: #FF0000 !important; }
-        .glow-button:hover { box-shadow: 0 0 20px rgba(255,0,0,0.4); }
-        .dark-map-filter { filter: grayscale(100%) invert(92%) contrast(83%); }
-    </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
-<!-- NAVBAR -->
+const fs = require('fs');
+const path = require('path');
+
+const navHtml = `<!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
     <div class="flex items-center gap-3">
@@ -97,75 +80,25 @@
         <a class="block py-2 font-medium text-slate-700 dark:text-slate-200 hover:text-[#E11D48] border-t border-slate-100 dark:border-slate-800/50" href="contact.html">Contact</a>
     </div>
 </div>
-</nav>
-<main class="max-w-7xl mx-auto px-6 py-20">
-<div class="w-full h-[400px] mb-12 overflow-hidden rounded-lg">
-<img alt="Innovation District Office" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600"/>
-</div>
-<div class="mb-20">
-<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6 leading-none">Let's Build <br/><span class="text-primary italic">Africa's Future</span></h1>
-<p class="text-xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">Connect with our expert team to scale your technology solutions across the continent and beyond.</p>
-</div>
-<div class="grid lg:grid-cols-2 gap-24">
-<section>
-<div class="mb-10 overflow-hidden rounded-lg h-64">
-<img alt="Professional consulting environment" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1600"/>
-</div>
-<form class="space-y-10">
-<div>
-<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Your Name</label>
-<input class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg" placeholder="John Doe" type="text"/>
-</div>
-<div class="grid md:grid-cols-2 gap-10">
-<div>
-<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Work Email</label>
-<input class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg" placeholder="john@company.com" type="email"/>
-</div>
-<div>
-<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Subject</label>
-<select class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg appearance-none">
-<option>Inquiry Type</option>
-<option>Tech Partnership</option>
-<option>Innovation Consulting</option>
-<option>Cloud Migration</option>
-<option>Other</option>
-</select>
-</div>
-</div>
-<div>
-<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Tell us about your project</label>
-<textarea class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg resize-none" placeholder="Briefly describe your goals..." rows="4"></textarea>
-</div>
-<button class="group inline-flex items-center gap-4 bg-primary text-white px-10 py-5 font-bold tracking-widest uppercase glow-button transition-all" type="submit">
-Send Inquiry <span class="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-</form>
-</section>
-<section class="space-y-12">
-<div>
-<h3 class="text-xs uppercase tracking-widest font-bold text-primary mb-4">Location</h3>
-<p class="text-xl leading-relaxed text-slate-700 dark:text-slate-300">Innovation District, Lagos <br/> Nigeria, West Africa</p>
-</div>
-<div>
-<h3 class="text-xs uppercase tracking-widest font-bold text-primary mb-4">Communication</h3>
-<p class="text-xl leading-relaxed text-slate-700 dark:text-slate-300">
-<a class="hover:text-primary block" href="mailto:hello@africentric.tech">hello@africentric.tech</a>
-<a class="hover:text-primary block" href="tel:+23400000000">+234 1 234 5678</a>
-</p>
-</div>
-<div class="w-full h-96 relative overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-2xl">
-<iframe allowfullscreen="" class="absolute inset-0 w-full h-full dark:opacity-60 dark-map-filter" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.728551461973!2d3.3773173!3d6.428135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b15091a0f9b%3A0x7d06e23b207a977d!2sLagos!5e0!3m2!1sen!2sng!4v1625000000000!5m2!1sen!2sng" style="border:0;"></iframe>
-</div>
-</section>
-</div>
-</main>
-<footer class="mt-20 border-t border-slate-100 dark:border-slate-800 py-12">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<span class="text-sm font-bold tracking-widest uppercase opacity-50">© 2024 Africentric Technology Hub</span>
-<div class="flex gap-8 text-xs font-bold tracking-widest uppercase opacity-50">
-<a class="hover:text-primary" href="#">Privacy Policy</a>
-<a class="hover:text-primary" href="#">Terms of Service</a>
-</div>
-</div>
-</footer>
-</body></html>
+</nav>`;
+
+const pages = [
+    "index.html", "about.html", "services.html", "products.html", 
+    "enterprise.html", "contact.html", "training.html", 
+    "blog.html", "case-studies.html"
+];
+
+for (const p of pages) {
+    if (fs.existsSync(p)) {
+        let content = fs.readFileSync(p, 'utf8');
+        
+        // Remove trailing mobile menu div before replacing nav
+        content = content.replace(/<\/nav>\s*<div id="mobile-menu"[\s\S]*?<\/div>/, '</nav>');
+        
+        // Replace main nav block
+        content = content.replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/, navHtml);
+        
+        fs.writeFileSync(p, content, 'utf8');
+        console.log("Updated " + p);
+    }
+}
