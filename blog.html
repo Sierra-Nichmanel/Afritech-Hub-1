@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insights &amp; Blog - Africentric Technology Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:wght@300;400;500;600;700&amp;family=Outfit:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EF4444",
+                    },
+                    fontFamily: {
+                        display: ["General Sans", "sans-serif"],
+                        body: ["Outfit", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#080808] text-slate-100 antialiased font-body;
+            }
+        }
+        .post-card {
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .post-card:hover {
+            background: rgba(255, 255, 255, 0.02);
+            transform: translateY(-8px);
+        }
+        .post-image {
+            filter: grayscale(100%) contrast(1.1);
+            transition: all 0.6s ease;
+        }
+        .post-card:hover .post-image {
+            filter: grayscale(0%) contrast(1);
+            transform: scale(1.05);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080808;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a1a1a;
+        }
+
+        /* Scroll Reveal Base Styles */
+        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up { transform: translateY(50px); }
+        .reveal-down { transform: translateY(-30px); }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-scale { transform: scale(0.95); opacity: 0; }
+
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
+        /* Staggered Children Support */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible.stagger-children > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/20">
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#080808]/80 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<a href="index.html">
+<img alt="Africentric Logo" class="h-8 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+</a>
+<div class="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.3em] font-medium text-white/40">
+<a class="hover:text-white transition-colors" href="index.html">Home</a>
+<a class="hover:text-white transition-colors" href="about.html">About</a>
+<div class="relative group">
+    <a class="hover:text-white transition-colors flex items-center gap-2 py-8" href="services.html">
+        Services
+        <span class="material-symbols-outlined text-[10px]">expand_more</span>
+    </a>
+    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+        <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
+        <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
+        <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
+        <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
+    </div>
+</div>
+<a class="text-white border-b border-primary/40 pb-1" href="blog.html">Blog</a>
+<a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<header class="pt-48 pb-24 text-center reveal-up">
+<div class="max-w-4xl mx-auto px-6">
+<span class="text-primary text-xs font-bold uppercase tracking-[0.6em] mb-12 block">Technology &amp; Evolution</span>
+<h1 class="font-display text-5xl md:text-8xl font-bold tracking-tighter italic mb-10 leading-none">
+                Dispatches from <br/>the <span class="not-italic">Digital Frontier</span>.
+            </h1>
+<p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                Intellectual explorations into the intersection of heritage, machine learning, and African economic sovereignty.
+            </p>
+</div>
+</header>
+<section class="py-32">
+<div class="max-w-[1440px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 stagger-children reveal-up">
+<article class="post-card bg-[#080808] border border-white/5 group overflow-hidden">
+<div class="aspect-video overflow-hidden">
+<img alt="Neural networks in Fintech" class="post-image w-full h-full object-cover" src="assets/blog/ai-localization.png"/>
+</div>
+<div class="p-10">
+<div class="flex items-center gap-4 text-[10px] uppercase tracking-widest text-primary mb-6 font-bold">
+<span>Deep Learning</span>
+<span class="text-white/20">•</span>
+<span>March 2024</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-6 group-hover:text-primary transition-colors leading-tight">Localization of AI: Beyond Large Language Models.</h3>
+<p class="text-sm text-slate-500 font-light leading-relaxed mb-10">How specific neural architectures are solving uniquely African logistics challenges where global models fail.</p>
+<a class="flex items-center gap-3 text-[10px] uppercase tracking-widest font-bold" href="#">
+<span>Read Protocol</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</article>
+<article class="post-card bg-[#080808] border border-white/5 group overflow-hidden">
+<div class="aspect-video overflow-hidden">
+<img alt="Digital currency infrastructure" class="post-image w-full h-full object-cover" src="assets/blog/sovereign-cloud.png"/>
+</div>
+<div class="p-10">
+<div class="flex items-center gap-4 text-[10px] uppercase tracking-widest text-primary mb-6 font-bold">
+<span>FinTech</span>
+<span class="text-white/20">•</span>
+<span>February 2024</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-6 group-hover:text-primary transition-colors leading-tight">The Cloud Fabric of Sovereign Nations.</h3>
+<p class="text-sm text-slate-500 font-light leading-relaxed mb-10">Architecting hybrid cloud infrastructures that respect regional borders and data privacy laws.</p>
+<a class="flex items-center gap-3 text-[10px] uppercase tracking-widest font-bold" href="#">
+<span>Read Protocol</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</article>
+<article class="post-card bg-[#080808] border border-white/5 group overflow-hidden">
+<div class="aspect-video overflow-hidden">
+<img alt="The craft of engineering" class="post-image w-full h-full object-cover" src="assets/blog/digital-minimalism.png"/>
+</div>
+<div class="p-10">
+<div class="flex items-center gap-4 text-[10px] uppercase tracking-widest text-primary mb-6 font-bold">
+<span>Craftsmanship</span>
+<span class="text-white/20">•</span>
+<span>January 2024</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-6 group-hover:text-primary transition-colors leading-tight">Digital Minimalism in High-Stakes Systems.</h3>
+<p class="text-sm text-slate-500 font-light leading-relaxed mb-10">Why our 'craft first' philosophy outperforms feature-heavy legacy software in resilience testing.</p>
+<a class="flex items-center gap-3 text-[10px] uppercase tracking-widest font-bold" href="#">
+<span>Read Protocol</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="py-40 bg-zinc-950/20 text-center reveal-scale">
+<div class="max-w-xl mx-auto px-6">
+<h2 class="font-display text-4xl font-bold mb-10">Intellectual Bulletin</h2>
+<p class="text-sm text-slate-500 font-light mb-12">Receive our periodic analytical reports directly to your coordinates.</p>
+<div class="flex items-center border-b border-white/20 pb-4">
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 p-0 placeholder:text-slate-700 italic" placeholder="Email coordinates" type="email"/>
+<button class="material-symbols-outlined text-primary">logout</button>
+</div>
+</div>
+</section>
+<footer class="py-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="text-[10px] uppercase tracking-[0.4em] text-white/20 font-light">© 2024 Africentric Insights. Knowledge is precision.</p>
+<div class="flex gap-12 text-[10px] uppercase tracking-widest text-white/20">
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">Substack</a>
+</div>
+</div>
+</footer>
+<script src="animations.js" defer></script>
+</body></html>

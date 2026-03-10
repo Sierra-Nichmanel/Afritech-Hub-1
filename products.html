@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Products - Africentric Technology Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:wght@300;400;500;600;700&amp;family=Outfit:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EF4444",
+                    },
+                    fontFamily: {
+                        display: ["General Sans", "sans-serif"],
+                        body: ["Outfit", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#030303] text-zinc-100 antialiased font-body;
+            }
+        }
+        .product-card {
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .product-card:hover {
+            transform: scale(1.02);
+        }
+        .product-image {
+            filter: grayscale(100%) brightness(0.8);
+            transition: all 0.7s ease;
+        }
+        .product-card:hover .product-image {
+            filter: grayscale(0%) brightness(1);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030303;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #111;
+        }
+
+        /* Scroll Reveal Base Styles */
+        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up { transform: translateY(50px); }
+        .reveal-down { transform: translateY(-30px); }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-scale { transform: scale(0.95); opacity: 0; }
+
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
+        /* Staggered Children Support */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible.stagger-children > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/20">
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#030303]/80 backdrop-blur-2xl">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<a href="index.html">
+<img alt="Africentric Logo" class="h-8 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+</a>
+<div class="hidden md:flex items-center gap-10 text-[10px] uppercase tracking-[0.4em] font-medium text-white/40">
+<a class="hover:text-white transition-colors" href="index.html">Home</a>
+<a class="hover:text-white transition-colors" href="about.html">About</a>
+<div class="relative group">
+    <a class="hover:text-white transition-colors flex items-center gap-2 py-8" href="services.html">
+        Services
+        <span class="material-symbols-outlined text-[10px]">expand_more</span>
+    </a>
+    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+        <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
+        <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
+        <a href="products.html" class="text-primary block px-4 py-3 bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
+        <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
+    </div>
+</div>
+<a class="hover:text-white transition-colors" href="blog.html">Blog</a>
+<a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<header class="pt-48 pb-24 text-center reveal-up">
+<div class="max-w-4xl mx-auto px-6">
+<span class="text-primary text-[10px] font-bold uppercase tracking-[0.6em] mb-12 block">Built for Impact</span>
+<h1 class="font-display text-5xl md:text-8xl font-bold tracking-tighter mb-10 leading-none">
+                Proprietary <br/><span class="italic font-light text-white/60">Digital Assets</span>.
+            </h1>
+<p class="text-xl text-zinc-500 font-light leading-relaxed max-w-2xl mx-auto">
+                Discover our range of precision-engineered products designed to accelerate African economic digital transformation.
+            </p>
+</div>
+</header>
+<section class="py-32">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 stagger-children reveal-up">
+<div class="product-card bg-zinc-900/40 border border-white/5 p-12 lg:p-16 group">
+<h3 class="font-display text-3xl font-bold mb-6 italic">Sovereign Cloud</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Secure, regional cloud infrastructure with localized data governance protocols.</p>
+<button class="px-10 py-4 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">Details</button>
+</div>
+<div class="product-card bg-zinc-900/40 border border-white/5 p-12 lg:p-16 group">
+<h3 class="font-display text-3xl font-bold mb-6 italic">Neural Flow</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Localized machine learning toolkit for enterprise operations and logistics optimization.</p>
+<button class="px-10 py-4 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">Details</button>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-24 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="text-[10px] uppercase tracking-[0.4em] text-white/20">© 2024 Africentric Products. Innovation Delivered.</p>
+</div>
+</footer>
+<script src="animations.js" defer></script>
+</body></html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services - Africentric Technology Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&amp;family=Outfit:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EF4444",
+                    },
+                    fontFamily: {
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                        display: ["Outfit", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#030303] text-zinc-100 antialiased font-sans;
+            }
+        }
+        .service-card {
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(239, 68, 68, 0.2);
+            transform: translateY(-12px);
+        }
+        .num-label {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+        .sticky-label {
+            writing-mode: vertical-rl;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030303;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #111;
+        }
+
+        /* Scroll Reveal Base Styles */
+        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up { transform: translateY(50px); }
+        .reveal-down { transform: translateY(-30px); }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-scale { transform: scale(0.95); opacity: 0; }
+
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
+        /* Staggered Children Support */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible.stagger-children > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/20">
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#030303]/80 backdrop-blur-2xl">
+<div class="max-w-[1440px] mx-auto px-8 h-20 flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a href="index.html">
+<img alt="Africentric Logo" class="h-8 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+</a>
+<div class="hidden lg:flex items-center gap-10 text-[10px] uppercase tracking-[0.4em] font-medium text-white/40">
+<a class="hover:text-white transition-colors" href="index.html">Home</a>
+<a class="hover:text-white transition-colors" href="about.html">About</a>
+<div class="relative group">
+    <a class="text-white border-b border-primary/40 pb-1 flex items-center gap-2 py-8" href="services.html">
+        Services
+        <span class="material-symbols-outlined text-[10px]">expand_more</span>
+    </a>
+    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+        <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
+        <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
+        <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
+        <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
+    </div>
+</div>
+<a class="hover:text-white transition-colors" href="blog.html">Blog</a>
+<a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<header class="pt-48 pb-20 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative z-10 reveal-up">
+<div class="max-w-3xl">
+<span class="text-primary text-[10px] font-bold uppercase tracking-[0.6em] mb-12 block">What We Orchestrate</span>
+<h1 class="font-display text-6xl md:text-9xl font-extralight tracking-tighter leading-none mb-12">
+                Precision <br/><span class="italic font-normal">Capacities</span>.
+            </h1>
+<p class="text-xl text-zinc-500 font-light leading-relaxed max-w-2xl mb-12">
+                We deliver ultra-high-end technological services across the full architectural spectrum, designed for the unique demands of the African enterprise landscape.
+            </p>
+</div>
+</div>
+<div class="absolute -right-20 top-20 text-[20rem] font-display font-black text-white/[0.02] select-none italic">EXPERTISE</div>
+</header>
+<section class="py-32">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children reveal-up">
+<div class="service-card p-12 lg:p-16 relative overflow-hidden group">
+<h4 class="num-label font-display text-8xl font-black absolute top-4 right-8">01</h4>
+<h3 class="font-display text-3xl font-light mb-8 italic tracking-widest">Platform Design</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Bespoke software architecture engineered for absolute resilience and infinite scalability across borders.</p>
+<ul class="space-y-4 text-[10px] tracking-[0.2em] font-bold text-zinc-400">
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Enterprise Systems</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Legacy Migration</li>
+</ul>
+</div>
+<div class="service-card p-12 lg:p-16 relative overflow-hidden group">
+<h4 class="num-label font-display text-8xl font-black absolute top-4 right-8">02</h4>
+<h3 class="font-display text-3xl font-light mb-8 italic tracking-widest">Neural Logic</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Implementing localized predictive models and neural networks to optimize business intelligence and operations.</p>
+<ul class="space-y-4 text-[10px] tracking-[0.2em] font-bold text-zinc-400">
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Pattern Recognition</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Cognitive Automation</li>
+</ul>
+</div>
+<div class="service-card p-12 lg:p-16 relative overflow-hidden group">
+<h4 class="num-label font-display text-8xl font-black absolute top-4 right-8">03</h4>
+<h3 class="font-display text-3xl font-light mb-8 italic tracking-widest">Cloud Sovereignty</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Architecting hybrid cloud ecosystems that ensure data integrity and compliance with regional regulatory landscapes.</p>
+<ul class="space-y-4 text-[10px] tracking-[0.2em] font-bold text-zinc-400">
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Data Architecture</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Security Hardening</li>
+</ul>
+</div>
+<div class="service-card p-12 lg:p-16 relative overflow-hidden group">
+<h4 class="num-label font-display text-8xl font-black absolute top-4 right-8">04</h4>
+<h3 class="font-display text-3xl font-light mb-8 italic tracking-widest">FinTech Forge</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Developing high-stakes transaction engines and infrastructure for the future of digital economic systems.</p>
+<ul class="space-y-4 text-[10px] tracking-[0.2em] font-bold text-zinc-400">
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Engine Protocol</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Real-time Settlement</li>
+</ul>
+</div>
+<div class="service-card p-12 lg:p-16 relative overflow-hidden group">
+<h4 class="num-label font-display text-8xl font-black absolute top-4 right-8">05</h4>
+<h3 class="font-display text-3xl font-light mb-8 italic tracking-widest">Digital Strategy</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Consulting on high-level roadmap execution to transform legacy enterprises into digital century powerhouses.</p>
+<ul class="space-y-4 text-[10px] tracking-[0.2em] font-bold text-zinc-400">
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Product Roadmapping</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Market Intelligence</li>
+</ul>
+</div>
+<div class="service-card p-12 lg:p-16 relative overflow-hidden group">
+<h4 class="num-label font-display text-8xl font-black absolute top-4 right-8">06</h4>
+<h3 class="font-display text-3xl font-light mb-8 italic tracking-widest">Security Protocol</h3>
+<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Advanced cybersecurity architecture designed to protect the integrity of Africa's most sensitive digital assets.</p>
+<ul class="space-y-4 text-[10px] tracking-[0.2em] font-bold text-zinc-400">
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Threat Modeling</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-px bg-primary"></span> Decryption Safety</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="py-60 bg-black">
+<div class="max-w-4xl mx-auto px-8 text-center reveal-scale">
+<h2 class="font-display text-5xl md:text-8xl font-light tracking-tighter mb-16 italic leading-none">The Methodology of <br/> <span class="not-italic font-bold">Absolute</span> Craft.</h2>
+<p class="text-xl text-zinc-500 font-light leading-relaxed mb-20 max-w-2xl mx-auto">Our engagement model is deeply collaborative, rigorous, and uncompromising in its focus on technical perfection.</p>
+<button class="bg-primary text-white px-12 py-5 text-[10px] tracking-[0.4em] font-bold hover:bg-white hover:text-black transition-all">Request Methodology Brief</button>
+</div>
+</section>
+<footer class="py-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] tracking-[0.3em] font-bold text-zinc-700">
+<p>© 2024 Africentric Technology Hub. Forward Motion.</p>
+<div class="flex gap-12 uppercase">
+<a class="hover:text-primary transition-colors" href="#">System Status</a>
+<a class="hover:text-primary transition-colors" href="#">Legal Protocol</a>
+</div>
+</div>
+</footer>
+<script src="animations.js" defer></script>
+</body></html>

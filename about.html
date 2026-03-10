@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Africentric Technology Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EF4444",
+                        "background-dark": "#050505",
+                        "surface-dark": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        serif: ["Playfair Display", "serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-dark text-slate-100 antialiased;
+            }
+        }
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60M0 30L60 30M15 0L15 60M45 0L45 60M0 15L60 15M0 45L60 45' stroke='%23ffffff' stroke-opacity='0.03' fill='none'/%3E%3C/svg%3E");
+        }
+        .cinematic-overlay {
+            background: linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.9) 80%, rgba(5,5,5,1) 100%);
+        }
+        .team-card img {
+            filter: grayscale(100%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .team-card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+        }
+
+        /* Scroll Reveal Base Styles */
+        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up { transform: translateY(50px); }
+        .reveal-down { transform: translateY(-30px); }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-scale { transform: scale(0.95); opacity: 0; }
+
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
+        /* Staggered Children Support */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible.stagger-children > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-display">
+<nav class="fixed w-full z-50 border-b border-white/5 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a href="index.html">
+<img alt="Africentric Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALCzTiQ4UoTB6217COWHqiasmslvu_9ajQk47Wl1MV9VcJqi1O7Jg9G7vWgc6RLxi0Lrhp6KE6Dm-MKho7-exW-BJY4YjtvXjqMQTRW8cvoHjCh7unZAuxKl6dwvIfsBHeuPVH6Vob50yycQn56adTw-gLfpsTt_RvF1NsPW2Q01sww57_yJnra-UuFMn0XAMqMohPAE-dYLJ8zLR0YvlUYzz-mVM3mGC-S2KzD1HMprW4s5YssM8ZpYtwMrHawnGE-GqG7V0dhqY"/>
+</a>
+</div>
+<div class="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.2em] font-medium">
+<a class="hover:text-primary transition-colors text-white/70" href="index.html">Home</a>
+<a class="text-primary" href="about.html">About</a>
+<div class="relative group">
+    <a class="hover:text-primary transition-colors text-white/70 flex items-center gap-2 py-8" href="services.html">
+        Services
+        <span class="material-symbols-outlined text-[10px]">expand_more</span>
+    </a>
+    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+        <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
+        <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
+        <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
+        <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
+    </div>
+</div>
+<a class="hover:text-primary transition-colors text-white/70" href="blog.html">Blog</a>
+<a class="hover:text-primary transition-colors text-white/70" href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<header class="relative min-h-screen flex items-end pb-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic Background" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh_EwVio1QYpbRDODbG86J9-U2A_MeRrKEmHyp_ul9BckMQadKK1azmCX7FE12F9TYmAJ-j44UFFuhB_M-9DCx9ieHMSeuONw24HsKZjwGdCPsHVfmsL2XchVidTGzZciqnovuzsNg7qVhLVlX8B1QsJpqkGmQJ8rS9KR2A2joWlsOBZXkOuxwqI4YL9504m8lAff_yP8oXrUwR1tBNH6_0vh8Qk9MPl7QV2dzYsoJxRGPzTt3LhaTbdbGZJDxtNc32Ks5MZKOVPg"/>
+<div class="absolute inset-0 cinematic-overlay"></div>
+<div class="absolute inset-0 pattern-bg opacity-40"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 w-full reveal-up">
+<div class="max-w-4xl">
+<span class="inline-flex items-center gap-3 text-primary font-bold text-sm uppercase tracking-[0.3em] mb-8">
+<span class="w-12 h-[1px] bg-primary"></span>
+                The Collective Legacy
+            </span>
+<h1 class="text-6xl md:text-8xl font-serif italic font-light leading-tight mb-8">
+                Crafting the <span class="font-bold not-italic">Digital Pulse</span> of a Continent.
+            </h1>
+<p class="text-xl md:text-2xl text-slate-300 font-light leading-relaxed max-w-2xl">
+                Africentric Tech Hub is more than a firm. It is a movement of visionary minds building the infrastructure for Africa's digital sovereignty.
+            </p>
+</div>
+</div>
+</header>
+<section class="py-32 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
+<div class="reveal-up">
+<h2 class="text-4xl md:text-5xl font-serif mb-12">An Unfolding Narrative</h2>
+<div class="space-y-8 text-lg text-slate-400 font-light leading-loose">
+<p>
+                    Our journey didn't begin in a boardroom. It began in the vibrant streets of Lagos and Nairobi, where we witnessed the incredible resilience and ingenuity of local entrepreneurs. We saw a gap—not of talent, but of specialized high-end technological craft.
+                </p>
+<p>
+                    Today, we stand as a cornerstone of African innovation. We weave together the threads of heritage and high-tech, creating solutions that don't just work—they resonate.
+                </p>
+<div class="pt-8 flex items-center gap-8">
+<div>
+<p class="text-4xl font-bold text-white mb-1">10+</p>
+<p class="text-xs uppercase tracking-widest text-primary">Years Active</p>
+</div>
+<div class="w-px h-12 bg-white/10"></div>
+<div>
+<p class="text-4xl font-bold text-white mb-1">200+</p>
+<p class="text-xs uppercase tracking-widest text-primary">Engagements</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group reveal-right">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Our Story" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDpXvNh_-G-iH1KuHX53agkgo_qbUkktRiRPqFhozJV5wirUdLyczg9jP64nxlaKRD4azZmXt-UvacpnM7JH1fdSjKioFnHUAtVmmqNlFxpgLpbATWUecvhmoap8lcOOpruhhZFte9k9CS7HbOn4MI9nwt6F3-FtasRKrKwVO9Ehce4WnBQB9uIS2YOjdibb6jJxvsTcsDou_rM2J7CnQINN01CRhS05FcqwFxeVyTjwrWhMCnbYpQGM7luBEVd-5KDBgxZjivjxw"/>
+</div>
+<div class="absolute -bottom-12 -left-12 w-64 h-64 border border-white/5 pattern-bg -z-10"></div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface-dark relative">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-1 bg-white/5 reveal-up">
+<div class="bg-background-dark p-16 md:p-24 flex flex-col justify-center">
+<span class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-12 block">The Mission</span>
+<h3 class="text-4xl md:text-5xl font-serif italic leading-tight mb-8">
+                    To engineer <span class="not-italic font-bold">bespoke tools</span> that empower local genius for global impact.
+                </h3>
+<p class="text-slate-400 leading-relaxed font-light">
+                    We specialize in high-stakes technological architecture. Our mission is to bridge the infrastructure gap with precision-engineered software that understands the nuances of the African landscape.
+                </p>
+</div>
+<div class="bg-background-dark p-16 md:p-24 flex flex-col justify-center relative overflow-hidden group">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+<img alt="Vision texture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA7h_Y_RCyLogHJUZifvL0LrUCYtaxpGbT8He80U70nyOT72oEgwYhTixYfYfbzASB1zpHx8jblkO6J4OvkVATpjwopgiZ689LaWlpBTmqvWmIEgjqQUBP-F9tQvh5GjYamZpKXlTFASGMVDepBkJsI_fGaOENEnnJzSho4QrEkF-9iqbxmioqMa0J8cy6nt1dYUS1taRW8p5z9eZ9CkSYos3eEvsEtrqOhfxb-x7gReiC6wKPAUBNBS7YDOlRuBamzyt1Pd6ehho"/>
+</div>
+<div class="relative z-10">
+<span class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-12 block">The Vision</span>
+<h3 class="text-4xl md:text-5xl font-serif italic leading-tight mb-8">
+                        The heartbeat of <span class="not-italic font-bold">African tech</span> sovereignty.
+                    </h3>
+<p class="text-slate-400 leading-relaxed font-light">
+                        We envision an era where African enterprises lead global markets through their own proprietary technology, powered by the solutions we build today.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-20">
+<h2 class="text-3xl font-serif italic">Our Foundational Ethics</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 border-t border-white/10 stagger-children reveal-up">
+<div class="p-10 border-b lg:border-b-0 border-r border-white/10 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl font-light">psychology</span>
+<h4 class="text-lg font-medium mb-4 uppercase tracking-widest">Innovation</h4>
+<p class="text-sm text-slate-500 font-light leading-relaxed">Exploring uncharted territories in code and concept.</p>
+</div>
+<div class="p-10 border-b lg:border-b-0 border-r border-white/10 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl font-light">verified</span>
+<h4 class="text-lg font-medium mb-4 uppercase tracking-widest">Excellence</h4>
+<p class="text-sm text-slate-500 font-light leading-relaxed">Artisanal attention to every module and interface.</p>
+</div>
+<div class="p-10 border-b lg:border-b-0 border-r border-white/10 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl font-light">gavel</span>
+<h4 class="text-lg font-medium mb-4 uppercase tracking-widest">Integrity</h4>
+<p class="text-sm text-slate-500 font-light leading-relaxed">Radical transparency in our partnerships.</p>
+</div>
+<div class="p-10 border-b lg:border-b-0 border-r border-white/10 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl font-light">public</span>
+<h4 class="text-lg font-medium mb-4 uppercase tracking-widest">Impact</h4>
+<p class="text-sm text-slate-500 font-light leading-relaxed">Measuring success through shared community growth.</p>
+</div>
+<div class="p-10 border-white/10 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl font-light">groups</span>
+<h4 class="text-lg font-medium mb-4 uppercase tracking-widest">Ubuntu</h4>
+<p class="text-sm text-slate-500 font-light leading-relaxed">Success achieved through collective strength.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-surface-dark">
+<div class="max-w-4xl mx-auto px-6">
+<h2 class="text-3xl font-serif italic mb-20 text-center">Milestones of Progress</h2>
+<div class="relative">
+<div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+<div class="space-y-32 stagger-children reveal-up">
+<div class="relative flex items-center justify-between">
+<div class="w-5/12 text-right pr-12">
+<span class="text-xs uppercase tracking-[0.4em] text-primary font-bold">2014</span>
+<h4 class="text-xl font-bold mt-2">The Genesis</h4>
+<p class="text-sm text-slate-500 mt-4 font-light">A small studio in Lagos begins a journey to redefine African software craft.</p>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary ring-8 ring-primary/10"></div>
+<div class="w-5/12"></div>
+</div>
+<div class="relative flex items-center justify-between flex-row-reverse">
+<div class="w-5/12 text-left pl-12">
+<span class="text-xs uppercase tracking-[0.4em] text-primary font-bold">2017</span>
+<h4 class="text-xl font-bold mt-2">Cross-Border Scale</h4>
+<p class="text-sm text-slate-500 mt-4 font-light">Expansion into East Africa, establishing our Nairobi innovation lab.</p>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white ring-8 ring-white/10"></div>
+<div class="w-5/12"></div>
+</div>
+<div class="relative flex items-center justify-between">
+<div class="w-5/12 text-right pr-12">
+<span class="text-xs uppercase tracking-[0.4em] text-primary font-bold">2021</span>
+<h4 class="text-xl font-bold mt-2">Award Winning</h4>
+<p class="text-sm text-slate-500 mt-4 font-light">Recognized as 'Tech Partner of the Year' at the Pan-African Digital Awards.</p>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white ring-8 ring-white/10"></div>
+<div class="w-5/12"></div>
+</div>
+<div class="relative flex items-center justify-between flex-row-reverse">
+<div class="w-5/12 text-left pl-12">
+<span class="text-xs uppercase tracking-[0.4em] text-primary font-bold">Present</span>
+<h4 class="text-xl font-bold mt-2">The AI Frontier</h4>
+<p class="text-sm text-slate-500 mt-4 font-light">Leading the integration of machine learning into local fintech ecosystems.</p>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary ring-8 ring-primary/10 animate-pulse"></div>
+<div class="w-5/12"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl font-serif italic mb-6">The Architects</h2>
+<p class="text-slate-400 font-light">A curated collective of engineers, designers, and strategists obsessed with perfection.</p>
+</div>
+<a class="text-sm uppercase tracking-widest text-primary font-bold hover:underline underline-offset-8" href="careers.html">Join the collective</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 stagger-children reveal-up">
+<div class="team-card bg-background-dark overflow-hidden group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Amara Okafor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU3_RpgGcHyLXlFDulZTPqQRfg6suyX2PDlvL8VKMKDt9lp31QrA085uCKod9WQTWDn10VDwE3f400RsQQg7uQeI3rbUSsQretbL53gAEtvrjYogYlFRLWlqpBCbmfWWTqs94lG1LrUShbizdVfRqGlItn-tI7BWpfrs9H_D3P0aCtSef5zrpY0Pj9WbexpAzNiM-oeK4PFBhTp6BIR1BXKS4NKALhqHUUuFLSkDfkfF8RqvCP8VRvkJIZhLKM7CzVcbST67SatEw"/>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold mb-1">Amara Okafor</h4>
+<p class="text-xs uppercase tracking-widest text-slate-500">Founder &amp; Visionary</p>
+</div>
+</div>
+<div class="team-card bg-background-dark overflow-hidden group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Kofi Mensah" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNngkoHidVJBdReznLbW8eGQfj5de2iFBQEk8wFlKGWJiRm1B3fwguIZNK22cSQZayVObodTFpNqrnJ0t7h-ReV3dBTlW5vDsKp3UPyS1W7F6Kv2JdlnooJfkqZC5K08IOVadOv64Q1gQiKdC_CTluXRW4FdKfdrm1d110nBFj8yD_5vcEGa0SLc14T-dN8px4chioedXuNFhn967mNyJxRT-mRana9gESxysWRW_zXsDLRxNxYfAvsr_8q8Jp0-8AgLZhM6guJ1A"/>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold mb-1">Kofi Mensah</h4>
+<p class="text-xs uppercase tracking-widest text-slate-500">Chief Technologist</p>
+</div>
+</div>
+<div class="team-card bg-background-dark overflow-hidden group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Zainab Abdi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk04ZiDpjlIgv7tYTC0WT0wlivnnEDyziKL6GzH4V7Tl4_Ig94-sK9V09wKBG4SQMd2QHSKY6pXKBntj1MC9a-Qeumsrn17ixkaw6Q5TrbNZXqj99bAjGXpjVDaR2frZ2fNq6gL3Ki5XtYUDHcQla7keMVbxm3Lq6W5lZNt-JNMlFOcGJZVUVxeWAdMsbIJQ-fNMckQCLK967kE7U6bp3X8L6Qz8dgR2bpkvFt__7jrueTedKt4_GrZPTyXLOSB3PJcSPnO5AckFA"/>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold mb-1">Zainab Abdi</h4>
+<p class="text-xs uppercase tracking-widest text-slate-500">Product Strategy</p>
+</div>
+</div>
+<div class="team-card bg-background-dark overflow-hidden group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Tunde Bakare" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2vYzz5LPel1kGvi5TcXCtZuu2c0jNDyjx8N4kkkhFDJPhi_5doOi4d1oI4BgKpKNqhpN1-nNuX2fN1Awd25Okq1gep2GU3WdV0DhmmBPnRzG0q34taiCdv6hM9FTm6tyUr7Ae2bGb2jTAY8ScOD6xGJC3zleWWw_Zh8ey43qcbEOMLsQ6GSOPWTQD2wG9ItLelnC1uka0svv6wxWV6c3LQbboPK-nyuXSfvZ5YfU9PT4rqKvC1Mz8fVAgaJ8IfFiR52An0AEqEoQ"/>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold mb-1">Tunde Bakare</h4>
+<p class="text-xs uppercase tracking-widest text-slate-500">Operations Lead</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-background-dark border-t border-white/10 pt-32 pb-12 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+<div class="col-span-1 md:col-span-1">
+<img alt="Africentric Logo" class="h-10 w-auto mb-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxe6MXqR-lO6umuQad-buEoRV9Duqycwy1C6OsnE0wR7xN0tdsEJdhMXhOrEBKqQ5J05qINIn5-ZOxG_8T54gi_hbjKrsqexrYwU1O73wGZE_bNXwZUbq-m9qrO-FrwdDVoT08gNujk-8Udo685ETPogKw_tKDkuom4LGXXdKJgOvsxQdMlrqcZiNPzOgD7qGMHChTdZhTkqiUUR04_YLWuVPC0AcMUby41jLwZymiYmFPVjwL83n88wMSDFDFXEz4cf9lAwhUvfU"/>
+<p class="text-slate-500 text-sm leading-relaxed mb-8 font-light">
+                    Redefining the African technology landscape through precision, craft, and uncompromising excellence.
+                </p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+</div>
+</div>
+<div>
+<h5 class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-10">Exploration</h5>
+<ul class="space-y-4 text-sm text-slate-500 font-light">
+<li><a class="hover:text-primary transition-colors" href="about.html">The Collective</a></li>
+<li><a class="hover:text-primary transition-colors" href="index.html">Success Stories</a></li>
+<li><a class="hover:text-primary transition-colors" href="careers.html">Open Positions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-10">The Craft</h5>
+<ul class="space-y-4 text-sm text-slate-500 font-light">
+<li><a class="hover:text-primary transition-colors" href="enterprise.html">Architecture</a></li>
+<li><a class="hover:text-primary transition-colors" href="enterprise.html">Cloud Infrastructure</a></li>
+<li><a class="hover:text-primary transition-colors" href="enterprise.html">FinTech Forge</a></li>
+<li><a class="hover:text-primary transition-colors" href="services.html">Experience Design</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-10">Dispatch</h5>
+<p class="text-sm text-slate-500 mb-8 font-light">Sign up for our quarterly insights on African tech trends.</p>
+<div class="flex items-center border-b border-white/20 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 p-0 placeholder:text-slate-700" placeholder="Email Address" type="email"/>
+<button class="text-primary hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-600 uppercase tracking-widest gap-4">
+<p>© 2024 Africentric Technology Hub. Engineered with purpose.</p>
+<div class="flex gap-10">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="animations.js" defer></script>
+</body></html>

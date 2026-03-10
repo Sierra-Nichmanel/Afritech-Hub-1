@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Page - Africentric Tech Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&amp;family=Outfit:wght@200;300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #FF0000;
+            --background: #000000;
+            --surface: #0A0A0A;
+            --border: #1A1A1A;
+            --text-muted: #888888;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: #ffffff;
+            letter-spacing: 0.02em;
+        }
+        .heading-font {
+            font-family: 'Outfit', sans-serif;
+        }
+        .wide-spacing {
+            letter-spacing: 0.15em;
+        }
+        .ultra-wide {
+            letter-spacing: 0.3em;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.08) 0%, transparent 70%);
+        }
+        .accent-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        .red-line-short {
+            width: 40px;
+            height: 1px;
+            background: var(--primary);
+        }
+        .thin-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .scroll-reveal {
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Scroll Reveal Base Styles */
+        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up { transform: translateY(50px); }
+        .reveal-down { transform: translateY(-30px); }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-scale { transform: scale(0.95); opacity: 0; }
+
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
+        /* Staggered Children Support */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible.stagger-children > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-red-500/30">
+<nav class="fixed top-0 z-50 w-full thin-nav border-b border-white/[0.05]">
+<div class="max-w-[1400px] mx-auto px-8 lg:px-12">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<a href="index.html">
+<img alt="Africentric Logo" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO6nAYaVvALeKfHD8P3q9ngVJS-U2O1liMRYvApGx7btNjioJPArX0Tq6QluV2zMxNl3IJnVdxfwdxYeCVrQgQx7QtW77vL0vU88U7Ubph0y-2hramHJpOg8B1YR_1CamiFd91BCp5R0Sz8cEJtsCwfgjBQ-oQCqPlNPdl2tCKjGTG-ARrFVMf7XyRT9RrrefK-hJ9nERfxfw6JgOPVkpgDtbmakmGt4b1mZv_K2H340Or0GRz2pCBzzGSaiNESbcbjo0gC5qqblk"/>
+</a>
+</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="nav-link relative text-[11px] uppercase wide-spacing font-light text-primary" href="index.html">Home</a>
+<a class="nav-link relative text-[11px] uppercase wide-spacing font-light text-white/70 hover:text-white transition-colors" href="about.html">About</a>
+<div class="relative group">
+    <a class="nav-link relative text-[11px] uppercase wide-spacing font-light text-white/70 hover:text-white transition-colors flex items-center gap-2 py-6" href="services.html">
+        Services
+        <span class="material-symbols-outlined text-[10px]">expand_more</span>
+    </a>
+    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+        <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
+        <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
+        <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
+        <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
+    </div>
+</div>
+<a class="nav-link relative text-[11px] uppercase wide-spacing font-light text-white/70 hover:text-white transition-colors" href="blog.html">Blog</a>
+<a class="nav-link relative text-[11px] uppercase wide-spacing font-light text-white/70 hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-8">
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+<div class="absolute inset-0 z-0">
+<img alt="Abstract High Tech Visual" class="w-full h-full object-cover opacity-40 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQEPZghWr5Y4ir1VIFewf_WdJ-bhfODBVEAURNWs-9EXnCn7pp0FBsmttdx2SS7IiF68fVyDbGPifr9OOb2A-DKodwGhRnBH8AnEosVQYZuXeXhrmX11cstGZfVDO7_WnohRp2ZCg146xKy4JUDH4RPCN_T4prlfCIMwamucEMr_ki5qf7XSO5L4zWn08SdZb3_ebRMu02Ua-pxbYJSp3TwY96aCBQLQy9RwDRmMPOeZo7XlOoFt58R3V_PAMHsNRpzRypG3r-sdc"/>
+<div class="absolute inset-0 bg-black/60"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 text-center reveal-up">
+<div class="mb-8 flex justify-center items-center gap-4">
+<div class="red-line-short"></div>
+<span class="text-[10px] uppercase ultra-wide text-red-500 font-semibold">The Frontier of Innovation</span>
+<div class="red-line-short"></div>
+</div>
+<h1 class="heading-font text-[clamp(3rem,8vw,6.5rem)] font-extralight leading-[1.1] mb-12 tracking-tight">
+                Building the <span class="font-normal italic">Future</span>
+</h1>
+<div class="max-w-2xl mx-auto mb-16">
+<p class="text-sm md:text-base font-light text-white/60 leading-relaxed wide-spacing">
+                    A multi-disciplinary technology firm architecting sustainable digital ecosystems across the African landscape.
+                </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-12">
+<a class="group flex items-center gap-4 text-[11px] uppercase wide-spacing font-light" href="services.html">
+<span>Explore Solutions</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform duration-500">east</span>
+</a>
+<a class="group flex items-center gap-4 text-[11px] uppercase wide-spacing font-light" href="about.html">
+<span>Our Legacy</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform duration-500">east</span>
+</a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30">
+<div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+</div>
+</section>
+<section class="py-32 bg-black">
+<div class="max-w-[1400px] mx-auto px-8">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 stagger-children reveal-up">
+<div class="border-l border-white/10 pl-8 group hover:border-red-600 transition-colors duration-700">
+<p class="text-[10px] uppercase ultra-wide text-white/40 mb-4">Ecosystems Built</p>
+<div class="heading-font text-5xl font-light"><span class="stat-number" data-count="10" data-suffix="+">0</span><span class="text-red-600 text-3xl ml-1">+</span></div>
+</div>
+<div class="border-l border-white/10 pl-8 group hover:border-red-600 transition-colors duration-700">
+<p class="text-[10px] uppercase ultra-wide text-white/40 mb-4">Total Users</p>
+<div class="heading-font text-5xl font-light"><span class="stat-number" data-count="2" data-suffix="K+">0</span><span class="text-red-600 text-3xl ml-1">K+</span></div>
+</div>
+<div class="border-l border-white/10 pl-8 group hover:border-red-600 transition-colors duration-700">
+<p class="text-[10px] uppercase ultra-wide text-white/40 mb-4">Global Reach</p>
+<div class="heading-font text-5xl font-light"><span class="stat-number" data-count="15" data-suffix="+">0</span><span class="text-red-600 text-3xl ml-1">+</span></div>
+</div>
+<div class="border-l border-white/10 pl-8 group hover:border-red-600 transition-colors duration-700">
+<p class="text-[10px] uppercase ultra-wide text-white/40 mb-4">Availability</p>
+<div class="heading-font text-5xl font-light"><span class="stat-number" data-count="99" data-suffix="%">0</span><span class="text-red-600 text-3xl ml-1">%</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-48 bg-black">
+<div class="max-w-[1400px] mx-auto px-8">
+<div class="flex flex-col lg:flex-row items-baseline justify-between mb-32 gap-12 reveal-up">
+<div class="max-w-3xl">
+<span class="text-[10px] uppercase ultra-wide text-red-600 mb-6 block">Capabilities</span>
+<h2 class="heading-font text-5xl md:text-7xl font-extralight tracking-tight leading-tight">
+                        Engineering with <br/>Global Precision.
+                    </h2>
+</div>
+<div class="lg:max-w-sm">
+<p class="text-sm font-light text-white/50 leading-loose wide-spacing">
+                        Merging deep continental insight with technical mastery to deploy infrastructure that redefines the possible.
+                    </p>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5 stagger-children reveal-up">
+<div class="bg-black p-12 lg:p-16 hover:bg-zinc-950 transition-colors duration-700 group">
+<span class="material-symbols-outlined text-white/20 group-hover:text-red-600 transition-colors duration-500 text-4xl mb-12 block">terminal</span>
+<h3 class="heading-font text-2xl font-light mb-6">Software Architecture</h3>
+<p class="text-[13px] font-light text-white/40 leading-relaxed wide-spacing mb-12">
+                        Bespoke digital platforms engineered for resilience and infinite scalability.
+                    </p>
+<div class="w-8 h-px bg-white/20 group-hover:w-full group-hover:bg-red-600 transition-all duration-700"></div>
+</div>
+<div class="bg-black p-12 lg:p-16 hover:bg-zinc-950 transition-colors duration-700 group">
+<span class="material-symbols-outlined text-white/20 group-hover:text-red-600 transition-colors duration-500 text-4xl mb-12 block">blur_on</span>
+<h3 class="heading-font text-2xl font-light mb-6">Intelligence &amp; Data</h3>
+<p class="text-[13px] font-light text-white/40 leading-relaxed wide-spacing mb-12">
+                        Harnessing neural networks and predictive analytics to drive meaningful enterprise impact.
+                    </p>
+<div class="w-8 h-px bg-white/20 group-hover:w-full group-hover:bg-red-600 transition-all duration-700"></div>
+</div>
+<div class="bg-black p-12 lg:p-16 hover:bg-zinc-950 transition-colors duration-700 group">
+<span class="material-symbols-outlined text-white/20 group-hover:text-red-600 transition-colors duration-500 text-4xl mb-12 block">cloud_queue</span>
+<h3 class="heading-font text-2xl font-light mb-6">Cloud Sovereignty</h3>
+<p class="text-[13px] font-light text-white/40 leading-relaxed wide-spacing mb-12">
+                        Advanced cloud orchestration designed for the unique connectivity of the continent.
+                    </p>
+<div class="w-8 h-px bg-white/20 group-hover:w-full group-hover:bg-red-600 transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</section>
+<div class="accent-line opacity-20"></div>
+<section class="py-60 bg-black relative overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full hero-gradient opacity-30"></div>
+<div class="max-w-5xl mx-auto px-8 text-center relative z-10 reveal-scale">
+<h2 class="heading-font text-5xl md:text-8xl font-extralight tracking-tighter mb-16 leading-none">
+                Commence your <br/>Next <span class="italic font-normal">Evolution</span>.
+            </h2>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+<button class="w-full sm:w-auto px-12 py-5 bg-white text-black text-[11px] uppercase ultra-wide font-bold hover:bg-red-600 hover:text-white transition-all duration-500">
+                    Initiate Project
+                </button>
+<button class="w-full sm:w-auto px-12 py-5 border border-white/20 text-white text-[11px] uppercase ultra-wide font-light hover:border-white transition-all duration-500">
+                    Consultation
+                </button>
+</div>
+</div>
+</section>
+<footer class="bg-black pt-32 pb-16 border-t border-white/5">
+<div class="max-w-[1400px] mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-32">
+<div class="space-y-12">
+<img alt="Africentric Logo" class="h-10 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATgjHE2YIbuzGWdQLzNl1XCx-hW16EiOJuL4gqoy-GLyxoVFgoegrwBnmCW4UALBXZDLXIg93ZpsBwe5eDYU724hjIhoG79Trml_LvPQyMPHWCTDHoC05ffeXNL2PydtyxpSwIu1EjDE6dOVsaFOCQMfAC0SSv6yn6ivNLRp8SrKY0mwXTUtoU0e3YIlMK1r2rWbo0Cy9xHOQ9oJkOYje5CUkc6VVqlgIrcfgAPJX89CxZROpBZTx480fMPOtz3oOl-w2OcA-xrWw"/>
+<p class="text-[13px] font-light text-white/40 leading-relaxed wide-spacing max-w-xs">
+                        The architectural foundation for Africa's digital century.
+                    </p>
+<div class="flex gap-8">
+<a class="text-white/40 hover:text-red-600 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="text-white/40 hover:text-red-600 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-[10px] uppercase ultra-wide text-white mb-10">Solutions</h4>
+<ul class="space-y-6 text-[12px] font-light text-white/40 tracking-widest">
+<li><a class="hover:text-white transition-colors" href="enterprise.html">System Design</a></li>
+<li><a class="hover:text-white transition-colors" href="services.html">Neural Networks</a></li>
+<li><a class="hover:text-white transition-colors" href="enterprise.html">Cloud Fabrics</a></li>
+<li><a class="hover:text-white transition-colors" href="blog.html">Digital Strategy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] uppercase ultra-wide text-white mb-10">Collective</h4>
+<ul class="space-y-6 text-[12px] font-light text-white/40 tracking-widest">
+<li><a class="hover:text-white transition-colors" href="about.html">Our Mission</a></li>
+<li><a class="hover:text-white transition-colors" href="services.html">Expertise</a></li>
+<li><a class="hover:text-white transition-colors" href="careers.html">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="about.html">Impact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] uppercase ultra-wide text-white mb-10">Bulletin</h4>
+<p class="text-[11px] text-white/40 mb-8 wide-spacing font-light">Join our periodic briefing on technology and evolution.</p>
+<form class="flex border-b border-white/20 pb-2 group focus-within:border-red-600 transition-colors">
+<input class="bg-transparent w-full text-[12px] font-light placeholder:text-white/20 focus:outline-none" placeholder="Email coordinates" type="email"/>
+<button class="material-symbols-outlined text-white/40 group-hover:text-white transition-colors">north_east</button>
+</form>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-white/5">
+<p class="text-[10px] ultra-wide uppercase text-white/20 font-light">© 2024 Africentric Technology Hub. Engineered for Excellence.</p>
+<div class="flex gap-12 text-[10px] ultra-wide uppercase text-white/20 font-light">
+<a class="hover:text-white transition-colors" href="#">Privacy Protocol</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Engagement</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="animations.js" defer></script>
+</body></html>

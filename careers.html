@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Careers - Africentric Technology Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Outfit:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EF4444",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        body: ["Outfit", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#030303] text-zinc-100 antialiased font-body;
+            }
+        }
+        .grid-pattern {
+            background-image: 
+                linear-gradient(to right, rgba(239, 68, 68, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .job-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .job-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+        .red-glow {
+            box-shadow: 0 0 40px -10px rgba(239, 68, 68, 0.3);
+        }
+        .text-balanced {
+            text-wrap: balance;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030303;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a1a1a;
+        }
+
+        /* Scroll Reveal Base Styles */
+        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up { transform: translateY(50px); }
+        .reveal-down { transform: translateY(-30px); }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-scale { transform: scale(0.95); opacity: 0; }
+
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
+        /* Staggered Children Support */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-visible.stagger-children > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30">
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 nav-blur bg-[#030303]/60">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<a href="index.html">
+<img alt="Africentric Logo" class="h-6 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+</a>
+<div class="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-500">
+<a class="hover:text-white transition-colors" href="index.html">Home</a>
+<a class="hover:text-white transition-colors" href="about.html">About</a>
+<div class="relative group">
+    <a class="hover:text-white transition-colors flex items-center gap-2 py-6" href="services.html">
+        Services
+        <span class="material-symbols-outlined text-[10px]">expand_more</span>
+    </a>
+    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+        <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
+        <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
+        <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
+        <a href="careers.html" class="text-primary block px-4 py-3 bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
+    </div>
+</div>
+<a class="hover:text-white transition-colors" href="blog.html">Blog</a>
+<a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative pt-48 pb-32 overflow-hidden">
+<div class="absolute inset-0 grid-pattern overflow-hidden">
+<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10 reveal-up">
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-8">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary">Hiring for the African century</span>
+</div>
+<h1 class="font-display text-5xl md:text-8xl font-bold leading-tight mb-8 text-balanced">
+                Architecting the <span class="italic font-light">Future</span> with Local Brilliance.
+            </h1>
+<p class="text-lg md:text-xl text-zinc-400 font-light leading-relaxed max-w-2xl mb-12">
+                Join a selective collective of visionaries building the technological backbone of a continent. We don't just write code; we engineer sovereignty.
+            </p>
+<div class="flex flex-wrap gap-8">
+<a class="flex items-center gap-4 text-sm font-medium group" href="#openings">
+<span class="border-b border-white pb-1 group-hover:border-primary transition-colors">Explore Openings</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 border-y border-white/5 bg-[#050505]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-12 stagger-children reveal-up">
+<div>
+<h4 class="text-3xl font-display font-medium mb-2">Remote-First</h4>
+<p class="text-xs uppercase tracking-[0.2em] text-zinc-500">Operate across borders</p>
+</div>
+<div>
+<h4 class="text-3xl font-display font-medium mb-2">Impact-Led</h4>
+<p class="text-xs uppercase tracking-[0.2em] text-zinc-500">Code for the community</p>
+</div>
+<div>
+<h4 class="text-3xl font-display font-medium mb-2">Continuous Growth</h4>
+<p class="text-xs uppercase tracking-[0.2em] text-zinc-500">Access to global labs</p>
+</div>
+<div>
+<h4 class="text-3xl font-display font-medium mb-2">Equity Model</h4>
+<p class="text-xs uppercase tracking-[0.2em] text-zinc-500">Ownership in progress</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32" id="openings">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8">
+<div>
+<h2 class="font-display text-4xl font-bold mb-4 italic">Open Positions</h2>
+<p class="text-zinc-500 font-light max-w-md">Our intake process is focused on exceptional craft and philosophical alignment.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-white/10 rounded-full text-xs hover:bg-white/5 transition-colors">Engineering</button>
+<button class="px-6 py-2 border border-white/10 rounded-full text-xs hover:bg-white/5 transition-colors">Design</button>
+<button class="px-6 py-2 border border-white/10 rounded-full text-xs hover:bg-white/5 transition-colors">Strategy</button>
+</div>
+</div>
+<div class="space-y-px bg-white/5 p-px stagger-children reveal-up">
+<div class="job-card bg-[#030303] p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8 border border-white/5">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-[10px] uppercase tracking-widest px-3 py-1 bg-primary/10 text-primary font-bold">Engineering</span>
+<span class="text-zinc-600 text-[10px]">•</span>
+<span class="text-zinc-500 text-[10px] uppercase tracking-widest">Lagos Lab / Remote</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-4">Senior Neural Network Architect</h3>
+<p class="text-sm text-zinc-500 font-light max-w-xl">Architecting localized AI models for financial inclusion and predictive logistics.</p>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-zinc-100 text-black text-[11px] uppercase tracking-widest font-bold hover:bg-primary hover:text-white transition-colors">
+                    Apply Now
+                </button>
+</div>
+<div class="job-card bg-[#030303] p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8 border border-white/5">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-[10px] uppercase tracking-widest px-3 py-1 bg-primary/10 text-primary font-bold">Engineering</span>
+<span class="text-zinc-600 text-[10px]">•</span>
+<span class="text-zinc-500 text-[10px] uppercase tracking-widest">Nairobi Lab</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-4">Full Stack Systems Engineer</h3>
+<p class="text-sm text-zinc-500 font-light max-w-xl">Building the next evolution of Pan-African digital currency infrastructure.</p>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-zinc-100 text-black text-[11px] uppercase tracking-widest font-bold hover:bg-primary hover:text-white transition-colors">
+                    Apply Now
+                </button>
+</div>
+<div class="job-card bg-[#030303] p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8 border border-white/5">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 text-zinc-400 font-bold">Design</span>
+<span class="text-zinc-600 text-[10px]">•</span>
+<span class="text-zinc-500 text-[10px] uppercase tracking-widest">Remote / Cape Town</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-4">Lead Product Crafter</h3>
+<p class="text-sm text-zinc-500 font-light max-w-xl">Defining the visual and interactive signature of high-stakes enterprise tools.</p>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-zinc-100 text-black text-[11px] uppercase tracking-widest font-bold hover:bg-primary hover:text-white transition-colors">
+                    Apply Now
+                </button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-zinc-950/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-display text-4xl md:text-5xl font-bold mb-12">Life at the Hub</h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">diversity_1</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Deep Collective</h4>
+<p class="text-sm text-zinc-500 leading-relaxed">Regular 'think-tank' sessions where engineers and designers merge perspectives to solve complex problems.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">self_improvement</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Sustainable Pace</h4>
+<p class="text-sm text-zinc-500 leading-relaxed">We value craftsmanship over speed. Our cycles ensure peak mental performance and creative wellbeing.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">local_fire_department</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Forge Labs</h4>
+<p class="text-sm text-zinc-500 leading-relaxed">Budget allocation for experimental projects that contribute to the open-source African ecosystem.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 h-[600px]">
+<div class="space-y-4">
+<img alt="Office space" class="w-full h-[60%] object-cover rounded-2xl opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+<img alt="Team collaboration" class="w-full h-[36%] object-cover rounded-2xl opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+</div>
+<div class="space-y-4 pt-12">
+<img alt="Lab testing" class="w-full h-[40%] object-cover rounded-2xl opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+<img alt="Design wall" class="w-full h-[56%] object-cover rounded-2xl opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-40 relative">
+<div class="max-w-4xl mx-auto px-6 text-center reveal-scale">
+<h2 class="font-display text-4xl md:text-6xl font-bold mb-12">Not finding a role? <br/>Architect one.</h2>
+<p class="text-zinc-400 mb-16 max-w-xl mx-auto font-light leading-relaxed">We are always open to meeting individuals whose potential exceeds conventional definitions. Pitch your collaborative vision.</p>
+<button class="px-12 py-5 bg-primary text-white text-xs uppercase tracking-[0.3em] font-bold red-glow hover:scale-105 transition-all">Submit Protocol</button>
+</div>
+</section>
+<footer class="py-20 border-t border-white/5 text-center">
+<div class="max-w-7xl mx-auto px-6">
+<img alt="Africentric Logo" class="h-6 w-auto mx-auto mb-10 opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+<p class="text-[10px] uppercase tracking-[0.4em] text-zinc-600">© 2024 Africentric Tech Hub. Forward motion only.</p>
+</div>
+</footer>
+<script src="animations.js" defer></script>
+</body></html>
