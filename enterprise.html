@@ -1,229 +1,382 @@
+<!-- Enterprise Solutions (v2) -->
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
+
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Enterprise Solutions - Africentric Technology Hub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&amp;family=Outfit:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Enterprise Solutions | Africentric Technology Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Montserrat:wght@700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#EF4444",
-                        accent: {
-                            50: "#fff1f2",
-                            500: "#ef4444",
-                            900: "#7f1d1d",
-                        },
-                    },
-                    fontFamily: {
-                        sans: ["Plus Jakarta Sans", "sans-serif"],
-                        display: ["Outfit", "sans-serif"],
-                    },
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#E31E24",
+              "background-light": "#F8FAFC",
+              "background-dark": "#0F172A",
+              secondary: "#1E293B",
             },
-        };
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Montserrat", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+            },
+          },
+        },
+      };
     </script>
-<style type="text/tailwindcss">
-        @layer base {
-            body {
-                @apply bg-[#050505] text-slate-200 antialiased font-sans;
-            }
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .hero-pattern {
-            background-color: #050505;
-            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
-            background-size: 40px 40px;
+            background-image: radial-gradient(circle at 2px 2px, rgba(227, 30, 36, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
         }
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(5, 5, 5, 0.7);
+        .dashboard-ui {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
-        .solution-card {
-            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-        .solution-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(239, 68, 68, 0.2);
-        }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050505;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1a1a1a;
-        }
-
-        /* Scroll Reveal Base Styles */
-        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
-            opacity: 0;
-            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal-up { transform: translateY(50px); }
-        .reveal-down { transform: translateY(-30px); }
-        .reveal-left { transform: translateX(-40px); }
-        .reveal-right { transform: translateX(40px); }
-        .reveal-scale { transform: scale(0.95); opacity: 0; }
-
-        .reveal-visible {
-            opacity: 1 !important;
-            transform: translate(0, 0) scale(1) !important;
-        }
-
-        /* Staggered Children Support */
-        .stagger-children > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal-visible.stagger-children > * {
-            opacity: 1;
-            transform: translateY(0);
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
         }
     </style>
 </head>
-<body class="selection:bg-primary/20">
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
-<div class="max-w-[1400px] mx-auto px-8 h-20 flex items-center justify-between">
-<div class="flex items-center gap-12">
-<a href="index.html">
-<img alt="Africentric Logo" class="h-8 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
-</a>
-<div class="hidden lg:flex items-center gap-10 text-[11px] uppercase tracking-[0.3em] font-medium text-white/50">
-<a class="hover:text-white transition-colors" href="index.html">Home</a>
-<a class="hover:text-white transition-colors" href="about.html">About</a>
-<div class="relative group">
-    <a class="hover:text-white transition-colors flex items-center gap-2 py-8" href="services.html">
-        Services
-        <span class="material-symbols-outlined text-[10px]">expand_more</span>
-    </a>
-    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
-        <a href="enterprise.html" class="text-primary block px-4 py-3 bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
-        <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
-        <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
-        <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
-    </div>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<img alt="Africentric Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsGKx5H2gyu8pKMGdRD86eoQfETe-Xm8QjV1ZCRbYgkO6RdWUwi6wXVUjX-2il9kYDFp8WL7tl5B8q2HajosNs1zLqU2l0F7kZDQBxAOnmvNNkwKyMx6TDuIiHMxJRudMQ1fsItaE7rfM0sPzbUiHOFAyMEfxawYRqFxX5SQm4-5A-_ZjIo1yyDgXSBda__k3jQoIWfBBSON54FK0B7Iww0Zt2YIS1Zi2nZN53BP4hTqONeH_i9rFGuth4MVHzkxQZIrGKELzcvHw"/>
+<div class="hidden md:block">
+<span class="block text-xl font-display font-extrabold leading-none tracking-tight dark:text-white">africentric</span>
+<span class="block text-[10px] tracking-[0.2em] font-bold text-primary uppercase">Technology Hub</span>
 </div>
-<a class="hover:text-white transition-colors" href="blog.html">Blog</a>
-<a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="services.html">Solutions</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Technology</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Security</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="case-studies.html">Case Studies</a>
+<button class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95">
+                        Consult Our Experts
+                    </button>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block text-yellow-400">light_mode</span>
+</button>
 </div>
 </div>
 </div>
 </nav>
-<header class="relative pt-48 pb-32 hero-pattern overflow-hidden">
-<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
-<div class="max-w-7xl mx-auto px-8 relative z-10 reveal-up">
-<div class="max-w-4xl">
-<span class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-[0.5em] mb-12">
-<span class="w-12 h-px bg-primary/30"></span>
-                Enterprise Grade Architecture
-            </span>
-<h1 class="font-display text-5xl md:text-8xl font-extralight tracking-tight leading-none mb-10 gradient-text">
-                Engineering <br/> <span class="font-normal italic">Sovereign</span> Systems.
-            </h1>
-<p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mb-12">
-                We design and deploy industrial-strength digital infrastructure that empowers African enterprises to operate with global precision and local insight.
-            </p>
-<div class="flex gap-8">
-<button class="bg-white text-black px-12 py-5 text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-primary hover:text-white transition-all duration-500">
-                    Get Started
-                </button>
+<header class="relative pt-32 pb-20 overflow-hidden hero-pattern">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                        Enterprise Grade Solutions
+                    </div>
+<h1 class="text-5xl md:text-7xl font-display font-extrabold text-slate-900 dark:text-white leading-tight">
+                        Securing the <span class="text-primary underline decoration-slate-200 dark:decoration-slate-800 underline-offset-8">Digital Backbone</span> of Africa
+                    </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                        We build robust, multi-tenant SaaS platforms and secure government ecosystems designed for the continent's unique scale and security requirements.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold flex items-center gap-2 hover:gap-3 transition-all shadow-xl shadow-primary/25">
+                            Explore Ecosystems <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="px-8 py-4 rounded-xl border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                            Security Whitepaper
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative glass rounded-2xl border border-slate-200/50 dark:border-white/10 p-4 shadow-2xl dashboard-ui">
+<div class="flex items-center justify-between mb-6 border-b border-slate-200/50 dark:border-white/5 pb-4">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+</div>
+<div class="text-[10px] font-mono opacity-50 uppercase tracking-widest">Global Security Hub</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-3">
+<div class="h-24 rounded-xl bg-slate-100 dark:bg-white/5 p-4 flex flex-col justify-between">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Active Nodes</span>
+<span class="text-2xl font-bold font-display text-primary">1,248</span>
+</div>
+<div class="h-24 rounded-xl bg-slate-100 dark:bg-white/5 p-4 flex flex-col justify-between border-l-4 border-primary">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Threat Response</span>
+<span class="text-2xl font-bold font-display">0.42s</span>
+</div>
+</div>
+<div class="h-auto rounded-xl bg-slate-900 overflow-hidden relative group">
+<img alt="Modern Data Infrastructure" class="w-full h-full object-cover opacity-60" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 space-y-3">
+<div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+<div class="w-2/3 h-full bg-primary"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[9px] text-slate-400 font-bold uppercase tracking-widest">Network Integrity</span>
+<span class="text-[10px] text-primary font-bold">99.9% SECURE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </header>
-<section class="py-32 bg-[#080808]">
-<div class="max-w-7xl mx-auto px-8">
-<div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
-<div class="max-w-2xl">
-<h2 class="font-display text-4xl italic font-light mb-6">Our Core Capacities</h2>
-<p class="text-slate-500 font-light leading-loose">Merging cloud scalability with neural intelligence to redefine the possible.</p>
+<section class="py-24 bg-white dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6">Built for Industrial Scale</h2>
+<p class="text-slate-600 dark:text-slate-400">Deploying world-class infrastructure that powers government agencies, financial institutions, and global enterprises across the African continent.</p>
 </div>
-<div class="text-[10px] uppercase tracking-[0.5em] text-primary font-bold border-b border-primary/20 pb-2">Solutions Matrix</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">corporate_fare</span>
 </div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children reveal-up">
-<div class="solution-card bg-white/[0.01] border border-white/5 p-12 relative overflow-hidden group">
-<span class="material-symbols-outlined text-primary text-4xl mb-12 block group-hover:scale-110 transition-transform">cloud_sync</span>
-<h3 class="font-display text-2xl font-light mb-6 uppercase tracking-widest">Cloud Ecosystems</h3>
-<p class="text-slate-500 text-sm font-light leading-relaxed mb-12">Architecting resilient, hyper-scale cloud fabrics designed for the connectivity nuances of the continent.</p>
-<ul class="space-y-4 text-[10px] uppercase tracking-widest text-white/40">
-<li class="flex items-center gap-3">
-<span class="w-1 h-1 bg-primary rounded-full"></span>
-                        Hybrid Infrastructures
-                    </li>
-<li class="flex items-center gap-3">
-<span class="w-1 h-1 bg-primary rounded-full"></span>
-                        Sovereign Data Storage
-                    </li>
+<div class="mb-6 rounded-2xl overflow-hidden h-48">
+<img alt="Corporate HQ Management" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"/>
+</div><h3 class="text-2xl font-bold mb-4">Enterprise Resource Planning (ERP)</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Custom modules for logistics, human capital management, and financial reconciliation optimized for emerging markets.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Localized compliance engines
+                        </li>
+<li class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Real-time inventory sync
+                        </li>
 </ul>
+<a class="text-primary font-bold flex items-center gap-2 group-hover:gap-3 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
-<div class="solution-card bg-white/[0.01] border border-white/5 p-12 relative overflow-hidden group">
-<span class="material-symbols-outlined text-primary text-4xl mb-12 block group-hover:scale-110 transition-transform">analytics</span>
-<h3 class="font-display text-2xl font-light mb-6 uppercase tracking-widest">Neural Logistics</h3>
-<p class="text-slate-500 text-sm font-light leading-relaxed mb-12">Deploying predictive intelligence to optimize complex supply chains and distribution networks across borders.</p>
-<ul class="space-y-4 text-[10px] uppercase tracking-widest text-white/40">
-<li class="flex items-center gap-3">
-<span class="w-1 h-1 bg-primary rounded-full"></span>
-                        Predictive Analytics
-                    </li>
-<li class="flex items-center gap-3">
-<span class="w-1 h-1 bg-primary rounded-full"></span>
-                        Automated Workflows
-                    </li>
-</ul>
+<div class="group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
 </div>
-<div class="solution-card bg-white/[0.01] border border-white/5 p-12 relative overflow-hidden group">
-<span class="material-symbols-outlined text-primary text-4xl mb-12 block group-hover:scale-110 transition-transform">security</span>
-<h3 class="font-display text-2xl font-light mb-6 uppercase tracking-widest">FinTech Forge</h3>
-<p class="text-slate-500 text-sm font-light leading-relaxed mb-12">Engineering high-frequency, secure transaction engines that power the next evolution of local finance.</p>
-<ul class="space-y-4 text-[10px] uppercase tracking-widest text-white/40">
-<li class="flex items-center gap-3">
-<span class="w-1 h-1 bg-primary rounded-full"></span>
-                        Hardened Security
-                    </li>
-<li class="flex items-center gap-3">
-<span class="w-1 h-1 bg-primary rounded-full"></span>
-                        Real-time Settlement
-                    </li>
+<div class="mb-6 rounded-2xl overflow-hidden h-48">
+<img alt="Government Summit" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1521791136064-7986c29596ad?auto=format&fit=crop&q=80&w=600"/>
+</div><h3 class="text-2xl font-bold mb-4">Government Systems (GovTech)</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Digital identity, revenue collection, and automated citizen services with national-grade security protocols.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Secure biometric integration
+                        </li>
+<li class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Transparent audit trails
+                        </li>
 </ul>
+<a class="text-primary font-bold flex items-center gap-2 group-hover:gap-3 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<div class="mb-6 rounded-2xl overflow-hidden h-48">
+<img alt="Modern Fintech Office" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600"/>
+</div><h3 class="text-2xl font-bold mb-4">Fintech &amp; Payments</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Multi-currency payment gateways and core banking infrastructure for the next generation of African finance.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            PCI-DSS Level 1 Compliance
+                        </li>
+<li class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Low-latency transaction engine
+                        </li>
+</ul>
+<a class="text-primary font-bold flex items-center gap-2 group-hover:gap-3 transition-all" href="#">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 </div>
 </div>
 </section>
-<section class="py-60 bg-black relative">
-<div class="absolute inset-0 opacity-20">
-<img alt="Data flow visual" class="w-full h-full object-cover grayscale mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
+<section class="py-24 relative overflow-hidden bg-slate-950 text-white">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+<path d="M0 100 L100 0" fill="none" stroke="currentColor" stroke-width="0.1"></path>
+<path d="M0 80 L80 0" fill="none" stroke="currentColor" stroke-width="0.1"></path>
+<path d="M20 100 L100 20" fill="none" stroke="currentColor" stroke-width="0.1"></path>
+</svg>
 </div>
-<div class="max-w-4xl mx-auto px-8 text-center relative z-10 reveal-scale">
-<h2 class="font-display text-5xl md:text-7xl font-light mb-12 italic">Precision. Scalability. Purpose.</h2>
-<p class="text-slate-400 font-light text-lg mb-16 leading-loose">We don't provide off-the-shelf software. We craft technological instruments that give your enterprise an unfair advantage in the marketplace.</p>
-<button class="border border-white/20 text-white px-10 py-4 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all">Download Protocol</button>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="text-4xl md:text-5xl font-display font-extrabold mb-8">Security-First Architecture</h2>
+<p class="text-lg text-slate-400 mb-12 leading-relaxed">In an era of increasing digital threats, we don't just build software; we build fortresses. Our "Defense in Depth" strategy ensures your enterprise data remains yours.</p>
+<div class="space-y-6">
+<div class="flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-primary text-3xl shrink-0">verified_user</span>
+<div>
+<h4 class="text-xl font-bold mb-1">Zero-Trust Protocol</h4>
+<p class="text-slate-500 text-sm">Continuous verification of every access request, regardless of where it originates.</p>
+</div>
+</div>
+<div class="flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-primary text-3xl shrink-0">encrypted</span>
+<div>
+<h4 class="text-xl font-bold mb-1">Quantum-Ready Encryption</h4>
+<p class="text-slate-500 text-sm">Advanced AES-256 and RSA-4096 standards for data at rest and in transit.</p>
+</div>
+</div>
+<div class="flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-primary text-3xl shrink-0">settings_remote</span>
+<div>
+<h4 class="text-xl font-bold mb-1">Multi-Tenant Isolation</h4>
+<p class="text-slate-500 text-sm">Logical and physical data separation ensuring zero cross-tenant contamination.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center">
+<div class="relative w-full max-w-md aspect-square rounded-full border border-primary/20 flex items-center justify-center p-12">
+<div class="absolute inset-0 animate-spin-slow opacity-20">
+<svg class="w-full h-full" viewBox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="48" stroke="white" stroke-dasharray="1 10"></circle>
+</svg>
+</div>
+<div class="relative z-10 text-center">
+<div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-6xl text-primary">security</span>
+</div>
+<div class="text-4xl font-display font-extrabold">99.99%</div>
+<div class="text-sm text-slate-500 font-bold uppercase tracking-widest">Uptime Guarantee</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<footer class="py-24 border-t border-white/5 bg-[#050505]">
-<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-6">
-<img alt="Africentric Logo" class="h-6 w-auto opacity-30 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
-<div class="w-px h-6 bg-white/10"></div>
-<p class="text-[10px] uppercase tracking-widest text-slate-600">Enterprise Division</p>
+<section class="py-24 bg-background-light dark:bg-background-dark overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6">Proven Impact</h2>
+<p class="text-slate-600 dark:text-slate-400">See how Africentric is transforming operations for leading institutions across the continent.</p>
 </div>
-<p class="text-[10px] uppercase tracking-[0.4em] text-slate-600">© 2024 Africentric Technology Hub. Excellence Orchestrated.</p>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all pb-2 border-b-2 border-primary/20" href="case-studies.html">
+                    View all success stories <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="relative group h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Smart City Infrastructure" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1570126688035-1e6adbd61053?auto=format&fit=crop&q=80&w=1200"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full">
+<div class="glass p-6 rounded-2xl">
+<span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">GovTech / Smart Cities</span>
+<h4 class="text-2xl font-bold text-white mb-3">National Revenue Digitalization</h4>
+<p class="text-slate-300 text-sm mb-4">Implementation of a centralized tax collection portal increasing revenue by 140% in 18 months.</p>
+<button class="bg-white text-slate-950 px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">Read Full Case Study</button>
+</div>
+</div>
+</div>
+<div class="relative group h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Fintech Dashboard" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full">
+<div class="glass p-6 rounded-2xl">
+<span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Fintech / Multi-tenant SaaS</span>
+<h4 class="text-2xl font-bold text-white mb-3">The Pan-African Payment Gateway</h4>
+<p class="text-slate-300 text-sm mb-4">A secure multi-tenant platform facilitating cross-border settlements across 12 African nations.</p>
+<button class="bg-white text-slate-950 px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">Read Full Case Study</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-primary rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 p-20 opacity-10">
+<span class="material-symbols-outlined text-[10rem]">rocket_launch</span>
+</div>
+<h2 class="text-4xl md:text-6xl font-display font-extrabold mb-8 relative z-10">Ready to scale your <br/>enterprise digitally?</h2>
+<p class="text-xl text-white/80 max-w-2xl mx-auto mb-10 relative z-10">Join 50+ pan-African enterprises leveraging our technology to drive growth and efficiency.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+<button class="bg-white text-primary px-10 py-5 rounded-2xl text-lg font-bold hover:bg-slate-100 transition-all shadow-xl">Book a Demo</button>
+<button class="bg-transparent border-2 border-white/30 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-white/10 transition-all">Talk to a Consultant</button>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-20 pb-10 transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<img alt="Africentric Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsGKx5H2gyu8pKMGdRD86eoQfETe-Xm8QjV1ZCRbYgkO6RdWUwi6wXVUjX-2il9kYDFp8WL7tl5B8q2HajosNs1zLqU2l0F7kZDQBxAOnmvNNkwKyMx6TDuIiHMxJRudMQ1fsItaE7rfM0sPzbUiHOFAyMEfxawYRqFxX5SQm4-5A-_ZjIo1yyDgXSBda__k3jQoIWfBBSON54FK0B7Iww0Zt2YIS1Zi2nZN53BP4hTqONeH_i9rFGuth4MVHzkxQZIrGKELzcvHw"/>
+<span class="text-xl font-display font-extrabold dark:text-white">africentric</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-xs mb-8">Empowering African innovation through secure, scalable, and sustainable enterprise technology solutions.</p>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Solutions</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Enterprise ERP</a></li>
+<li><a class="hover:text-primary" href="#">GovTech Systems</a></li>
+<li><a class="hover:text-primary" href="#">Fintech Core</a></li>
+<li><a class="hover:text-primary" href="#">SaaS Platforms</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Company</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="about.html">About Us</a></li>
+<li><a class="hover:text-primary" href="careers.html">Careers</a></li>
+<li><a class="hover:text-primary" href="case-studies.html">Case Studies</a></li>
+<li><a class="hover:text-primary" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Resources</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="blog.html">Blog</a></li>
+<li><a class="hover:text-primary" href="#">Security Hub</a></li>
+<li><a class="hover:text-primary" href="#">Documentation</a></li>
+<li><a class="hover:text-primary" href="#">Legal</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-500">© 2024 Africentric Technology Hub. All rights reserved.</p>
+<div class="flex gap-6 text-xs text-slate-500">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
 </div>
 </footer>
-<script src="animations.js" defer></script>
 </body></html>

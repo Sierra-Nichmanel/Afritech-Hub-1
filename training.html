@@ -1,196 +1,254 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Training &amp; Development - Africentric Technology Hub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Uncut+Sans:wght@300;400;500;600;700&amp;family=Outfit:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Training &amp; Capacity - Africentric Tech Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#EF4444",
-                    },
-                    fontFamily: {
-                        display: ["Uncut Sans", "sans-serif"],
-                        body: ["Outfit", "sans-serif"],
-                    },
-                },
-            },
-        };
+      tailwind.config = {
+        darkMode: "class",
+        theme: { extend: { colors: { primary: "#FF0000", "background-light": "#ffffff", "background-dark": "#0f172a" }, fontFamily: { display: ["Inter", "sans-serif"] }, borderRadius: { DEFAULT: "0.5rem" } } }
+      };
     </script>
-<style type="text/tailwindcss">
-        @layer base {
-            body {
-                @apply bg-[#020202] text-zinc-100 antialiased font-body;
-            }
-        }
-        .grain-overlay {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.05;
-            pointer-events: none;
-        }
-        .course-card {
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-        .course-card:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(239, 68, 68, 0.3);
-            transform: scale(1.02);
-        }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #020202;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #111;
-        }
-
-        /* Scroll Reveal Base Styles */
-        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
-            opacity: 0;
-            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal-up { transform: translateY(50px); }
-        .reveal-down { transform: translateY(-30px); }
-        .reveal-left { transform: translateX(-40px); }
-        .reveal-right { transform: translateX(40px); }
-        .reveal-scale { transform: scale(0.95); opacity: 0; }
-
-        .reveal-visible {
-            opacity: 1 !important;
-            transform: translate(0, 0) scale(1) !important;
-        }
-
-        /* Staggered Children Support */
-        .stagger-children > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal-visible.stagger-children > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .red-gradient { background: linear-gradient(135deg, #FF0000 0%, #990000 100%); }
     </style>
 </head>
-<body class="selection:bg-primary/20">
-<div class="fixed inset-0 grain-overlay z-[100]"></div>
-<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#020202]/80 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-<div class="flex items-center gap-10">
-<a href="index.html">
-<img alt="Africentric Logo" class="h-6 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
-</a>
-<div class="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-medium text-white/40">
-<a class="hover:text-white transition-colors" href="index.html">Home</a>
-<a class="hover:text-white transition-colors" href="about.html">About</a>
-<div class="relative group">
-    <a class="hover:text-white transition-colors flex items-center gap-2 py-6" href="services.html">
-        Services
-        <span class="material-symbols-outlined text-[10px]">expand_more</span>
-    </a>
-    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
-        <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
-        <a href="training.html" class="text-primary block px-4 py-3 bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
-        <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
-        <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
-    </div>
-</div>
-<a class="hover:text-white transition-colors" href="blog.html">Blog</a>
-<a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-200">
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<img alt="Africentric Technology Hub Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpMgHXHFvpBBfUKFnP-tiK7PFlAaQNLRxD4gcgXL03lbd6yRquFFPHQh9pPs2Fu_RbWTKqo5OjvdEij7mNAkrEdG_gNL2LkefN2z1PSjWwsfxKgb3upsNnAqCQcDm7xGgcEBGQAkHzA8zQ9i8eJifsQxSEYAbjZahY3LF4fiZ7_Fiaa-gf40JrmfY5uKOq1kA7u8mQNyCT4mQe_vTgXUqIExOH3IzS0s-bfnpTtYVbJGNHMOORh8lI_0htXfDQ8_aIMZpUoEFLhuc"/>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium hover:text-primary" href="services.html">Solutions</a>
+<a class="text-sm font-medium text-primary" href="training.html">Training</a>
+<a class="text-sm font-medium hover:text-primary" href="products.html">Innovation</a>
+<a class="text-sm font-medium hover:text-primary" href="about.html">About</a>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" id="theme-toggle">
+<span class="material-icons text-xl dark:hidden">dark_mode</span>
+<span class="material-icons text-xl hidden dark:block">light_mode</span>
+</button>
+<a class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90" href="#enroll">Enroll Now</a>
 </div>
 </div>
 </div>
 </nav>
-<header class="relative pt-48 pb-32 overflow-hidden">
-<div class="max-w-7xl mx-auto px-6 reveal-up">
-<div class="max-w-3xl">
-<span class="inline-block text-primary text-xs font-bold uppercase tracking-[0.5em] mb-10">Developing Local Genius</span>
-<h1 class="font-display text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter mb-10">
-                Sharpening the <br/><span class="italic font-light">Digital Edge</span>.
-            </h1>
-<p class="text-xl text-zinc-400 font-light leading-relaxed mb-12">
-                The Africentric Academy is a high-performance training ground for the next generation of African technical architects. We don't just teach code; we foster mastery.
-            </p>
+<section class="relative py-20 lg:py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+<div>
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase mb-4">Empowering Africa's Workforce</span>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+Advanced Training &amp; <span class="text-primary">Capacity Building</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-xl">Empowering corporate teams and government institutions with high-impact technology training. We bridge the digital divide through specialized programs in Software Engineering and Cloud Operations.</p>
+<div class="flex flex-wrap gap-4">
+<a class="flex items-center gap-2 bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform" href="#schedule">
+View Schedules <span class="material-icons">arrow_downward</span>
+</a>
+<div class="flex -space-x-3 items-center ml-4">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold">JD</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-[10px] font-bold">MK</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-400 flex items-center justify-center text-[10px] font-bold">SA</div>
+<span class="ml-4 text-sm font-medium text-slate-500">500+ Professionals Certified</span>
 </div>
 </div>
-</header>
-<section class="py-32 border-t border-white/5">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 stagger-children reveal-up">
-<div class="course-card p-12 lg:p-16">
-<div class="text-primary text-sm font-bold tracking-widest mb-10">01 / ARCHITECTURE</div>
-<h3 class="font-display text-2xl font-bold mb-6 italic">Full Stack Mastery</h3>
-<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Advanced systems engineering focusing on resilience, scalability, and clean code principles.</p>
-<div class="flex items-center gap-4 text-[10px] uppercase tracking-widest text-white/40">
-<span>12 Weeks</span>
-<span class="w-1 h-1 bg-white/20 rounded-full"></span>
-<span>Intensive</span>
+</div>
+<div class="mt-12 lg:mt-0 relative">
+<div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+<img alt="Professionals in training session" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl max-w-xs">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-primary/10 rounded-lg"><span class="material-icons text-primary">verified_user</span></div>
+<div><h4 class="font-bold text-sm">Industry Certified</h4><p class="text-xs text-slate-500">Recognized by major global tech providers</p></div>
 </div>
 </div>
-<div class="course-card p-12 lg:p-16">
-<div class="text-primary text-sm font-bold tracking-widest mb-10">02 / INTELLIGENCE</div>
-<h3 class="font-display text-2xl font-bold mb-6 italic">Neural Engineering</h3>
-<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Building and deploying machine learning models specifically designed for the African context.</p>
-<div class="flex items-center gap-4 text-[10px] uppercase tracking-widest text-white/40">
-<span>10 Weeks</span>
-<span class="w-1 h-1 bg-white/20 rounded-full"></span>
-<span>Advanced</span>
 </div>
 </div>
-<div class="course-card p-12 lg:p-16">
-<div class="text-primary text-sm font-bold tracking-widest mb-10">03 / FABRIC</div>
-<h3 class="font-display text-2xl font-bold mb-6 italic">Cloud Sovereignty</h3>
-<p class="text-sm text-zinc-500 font-light leading-relaxed mb-12">Mastering advanced cloud orchestration and sovereign infrastructure design.</p>
-<div class="flex items-center gap-4 text-[10px] uppercase tracking-widest text-white/40">
-<span>8 Weeks</span>
-<span class="w-1 h-1 bg-white/20 rounded-full"></span>
-<span>Expert</span>
+</div>
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">Our Core Specializations</h2>
+<p class="text-slate-600 dark:text-slate-400">Curriculums designed for the future of global technology</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white dark:bg-slate-800 p-10 rounded-3xl border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all group">
+<div class="mb-6 rounded-2xl overflow-hidden h-48"><img alt="Software Engineering" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"/></div>
+<div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform"><span class="material-icons text-white text-3xl">code</span></div>
+<h3 class="text-2xl font-bold mb-4">Software Engineering</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-8">Comprehensive full-stack development programs focusing on modern frameworks, clean code practices, and scalable architecture.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span> React &amp; Node.js Mastery</li>
+<li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span> Mobile App Development (Flutter)</li>
+<li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span> Database Management (SQL &amp; NoSQL)</li>
+</ul>
+<a class="text-primary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-icons">arrow_forward</span></a>
+</div>
+<div class="bg-white dark:bg-slate-800 p-10 rounded-3xl border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all group">
+<div class="mb-6 rounded-2xl overflow-hidden h-48"><img alt="Cloud Operations" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000"/></div>
+<div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform"><span class="material-icons text-white text-3xl">cloud</span></div>
+<h3 class="text-2xl font-bold mb-4">Cloud &amp; DevOps Operations</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-8">Hands-on cloud infrastructure training with AWS, Azure, and GCP, covering containerization, CI/CD, and infrastructure as code.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span> AWS/Azure Certified Programs</li>
+<li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span> Kubernetes Orchestration</li>
+<li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span> CI/CD Pipeline Automation</li>
+</ul>
+<a class="text-primary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Learn more <span class="material-icons">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24" id="schedule">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="text-3xl font-bold mb-2">Bootcamp Schedule 2024</h2>
+<p class="text-slate-600 dark:text-slate-400">Join our upcoming cohorts and master new skills</p>
+</div>
+<div class="flex gap-2">
+<span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-medium">Q3 July - Sept</span>
+<span class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium">Q4 Oct - Dec</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="text-left border-b border-slate-200 dark:border-slate-800">
+<th class="pb-6 pt-0 font-bold px-4">Program Name</th>
+<th class="pb-6 pt-0 font-bold px-4">Duration</th>
+<th class="pb-6 pt-0 font-bold px-4">Batch Status</th>
+<th class="pb-6 pt-0 font-bold px-4">Certification</th>
+<th class="pb-6 pt-0 font-bold px-4">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50">
+<td class="py-6 px-4"><span class="font-bold block">Enterprise Full-Stack Dev</span><span class="text-xs text-slate-500 uppercase tracking-tighter">Software Engineering</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400">12 Weeks</td>
+<td class="py-6 px-4"><span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded-full text-xs font-bold uppercase">Enrolling</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400 italic">Global Professional ID</td>
+<td class="py-6 px-4"><button class="text-primary font-bold hover:underline">Details</button></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50">
+<td class="py-6 px-4"><span class="font-bold block">Cloud Solutions Architect</span><span class="text-xs text-slate-500 uppercase tracking-tighter">Cloud &amp; DevOps</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400">8 Weeks</td>
+<td class="py-6 px-4"><span class="px-3 py-1 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 rounded-full text-xs font-bold uppercase">Waitlist</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400 italic">AWS Certified Associate</td>
+<td class="py-6 px-4"><button class="text-primary font-bold hover:underline">Details</button></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50">
+<td class="py-6 px-4"><span class="font-bold block">DevOps Lifecycle Management</span><span class="text-xs text-slate-500 uppercase tracking-tighter">Cloud &amp; DevOps</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400">10 Weeks</td>
+<td class="py-6 px-4"><span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded-full text-xs font-bold uppercase">Enrolling</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400 italic">Kubernetes Professional</td>
+<td class="py-6 px-4"><button class="text-primary font-bold hover:underline">Details</button></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50">
+<td class="py-6 px-4"><span class="font-bold block">Python for Data Analysis</span><span class="text-xs text-slate-500 uppercase tracking-tighter">Data Science</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400">6 Weeks</td>
+<td class="py-6 px-4"><span class="px-3 py-1 bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400 rounded-full text-xs font-bold uppercase">Closed</span></td>
+<td class="py-6 px-4 text-slate-600 dark:text-slate-400 italic">Data Specialist Cert</td>
+<td class="py-6 px-4"><button class="text-primary font-bold hover:underline">Details</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="py-24" id="enroll">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="rounded-[2rem] p-8 md:p-16 text-white shadow-2xl relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,0,0,0.9), rgba(153,0,0,0.9)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop') center/cover;">
+<div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">Start Your Transformation Today</h2>
+<p class="text-white/80 text-lg mb-8">Ready to elevate your team or career? Complete the form to receive a detailed program brochure and a free consultation.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"><span class="material-icons">school</span></div>
+<div><p class="font-bold">Government/Corp Discounts</p><p class="text-sm text-white/70">Bulk enrollment options available</p></div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"><span class="material-icons">event</span></div>
+<div><p class="font-bold">Flexible Learning</p><p class="text-sm text-white/70">Hybrid and onsite delivery modes</p></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-xl text-slate-900 dark:text-white">
+<form class="space-y-4">
+<div>
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">Full Name</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-transparent rounded-lg mt-1 focus:ring-primary focus:border-primary" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">Email Address</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-transparent rounded-lg mt-1 focus:ring-primary focus:border-primary" placeholder="john@organization.com" type="email"/>
+</div>
+<div>
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">Organization Type</label>
+<select class="w-full bg-slate-50 dark:bg-slate-800 border-transparent rounded-lg mt-1 focus:ring-primary focus:border-primary">
+<option>Corporate Entity</option>
+<option>Government Agency</option>
+<option>Individual</option>
+<option>NGO</option>
+</select>
+</div>
+<div>
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">Program of Interest</label>
+<select class="w-full bg-slate-50 dark:bg-slate-800 border-transparent rounded-lg mt-1 focus:ring-primary focus:border-primary">
+<option>Software Engineering Bootcamp</option>
+<option>Cloud &amp; DevOps Essentials</option>
+<option>Leadership in Technology</option>
+</select>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-lg font-bold text-lg hover:shadow-lg transition-all mt-4">Submit Enrollment Request</button>
+</form>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="py-48 bg-zinc-950/40">
-<div class="max-w-7xl mx-auto px-6 text-center">
-<h2 class="font-display text-4xl italic font-light mb-12">The Fellowship Model</h2>
-<p class="text-zinc-500 max-w-2xl mx-auto leading-relaxed font-light mb-20 text-lg">Our training isn't classroom-bound. Fellowships include direct involvement in high-stakes enterprise projects under the mentorship of our lead architects.</p>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center reveal-up">
-<div>
-<div class="text-4xl font-bold mb-2">90%</div>
-<p class="text-[10px] uppercase tracking-[0.4em] text-white/40">Placement Rate</p>
+<footer class="bg-slate-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-12 mb-12">
+<div class="col-span-2">
+<img alt="Logo" class="h-12 w-auto mb-6 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpMgHXHFvpBBfUKFnP-tiK7PFlAaQNLRxD4gcgXL03lbd6yRquFFPHQh9pPs2Fu_RbWTKqo5OjvdEij7mNAkrEdG_gNL2LkefN2z1PSjWwsfxKgb3upsNnAqCQcDm7xGgcEBGQAkHzA8zQ9i8eJifsQxSEYAbjZahY3LF4fiZ7_Fiaa-gf40JrmfY5uKOq1kA7u8mQNyCT4mQe_vTgXUqIExOH3IzS0s-bfnpTtYVbJGNHMOORh8lI_0htXfDQ8_aIMZpUoEFLhuc"/>
+<p class="text-slate-400 text-sm leading-relaxed">Africentric Technology Hub is a full-service technology and innovation firm dedicated to building the digital future of Africa.</p>
 </div>
 <div>
-<div class="text-4xl font-bold mb-2">500+</div>
-<p class="text-[10px] uppercase tracking-[0.4em] text-white/40">Graduates</p>
+<h4 class="font-bold mb-6">Programs</h4>
+<ul class="space-y-4 text-sm text-slate-400">
+<li><a class="hover:text-primary" href="#">Software Engineering</a></li>
+<li><a class="hover:text-primary" href="#">Cloud &amp; DevOps</a></li>
+<li><a class="hover:text-primary" href="#">Data Science</a></li>
+<li><a class="hover:text-primary" href="#">Cybersecurity</a></li>
+</ul>
 </div>
 <div>
-<div class="text-4xl font-bold mb-2">15+</div>
-<p class="text-[10px] uppercase tracking-[0.4em] text-white/40">Partner Enterprises</p>
+<h4 class="font-bold mb-6">Company</h4>
+<ul class="space-y-4 text-sm text-slate-400">
+<li><a class="hover:text-primary" href="about.html">About Us</a></li>
+<li><a class="hover:text-primary" href="contact.html">Contact</a></li>
+<li><a class="hover:text-primary" href="careers.html">Careers</a></li>
+</ul>
 </div>
-<div>
-<div class="text-4xl font-bold mb-2">1:1</div>
-<p class="text-[10px] uppercase tracking-[0.4em] text-white/40">Mentorship Ratio</p>
 </div>
+<div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+<p>© 2024 Africentric Technology Hub. All rights reserved.</p>
+<div class="flex gap-8"><a class="hover:text-white" href="#">Privacy Policy</a><a class="hover:text-white" href="#">Terms of Service</a></div>
 </div>
-</div>
-</section>
-<footer class="py-20 bg-black border-t border-white/5">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<img alt="Africentric Logo" class="h-4 opacity-20 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi0f79lU_mIs89sXyA_is9K36wE9t0OId27_jF72K2l0hV-XwQ1n_0mR9-V87R_8XW1W_V7R8W9U_Y0P1R2W3X4Y5Z6A7B8C9D"/>
-<p class="text-[10px] uppercase tracking-[0.4em] text-white/20">© 2024 Africentric Academy. Cultivating Mastery.</p>
 </div>
 </footer>
-<script src="animations.js" defer></script>
+<script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        if(themeToggleBtn) themeToggleBtn.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); });
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); }
+    </script>
 </body></html>

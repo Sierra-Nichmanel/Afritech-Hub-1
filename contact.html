@@ -1,179 +1,105 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact Us - Africentric Technology Hub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&amp;family=Outfit:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Contact Us - Africentric Tech Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Material+Icons&display=swap" rel="stylesheet"/>
 <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#EF4444",
-                    },
-                    fontFamily: {
-                        sans: ["Plus Jakarta Sans", "sans-serif"],
-                        display: ["Outfit", "sans-serif"],
-                    },
-                },
-            },
-        };
+      tailwind.config = {
+        darkMode: "class",
+        theme: { extend: { colors: { primary: "#FF0000", "background-light": "#FFFFFF", "background-dark": "#0A0A0A" }, fontFamily: { display: ["Plus Jakarta Sans", "sans-serif"], sans: ["Plus Jakarta Sans", "sans-serif"] } } }
+      };
     </script>
-<style type="text/tailwindcss">
-        @layer base {
-            body {
-                @apply bg-[#050505] text-slate-200 antialiased font-sans;
-            }
-        }
-        .form-input {
-            @apply bg-white/5 border border-white/10 px-6 py-4 text-sm font-light text-white focus:outline-none focus:border-primary/50 transition-all rounded-none;
-        }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050505;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1a1a1a;
-        }
-
-        /* Scroll Reveal Base Styles */
-        .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
-            opacity: 0;
-            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal-up { transform: translateY(50px); }
-        .reveal-down { transform: translateY(-30px); }
-        .reveal-left { transform: translateX(-40px); }
-        .reveal-right { transform: translateX(40px); }
-        .reveal-scale { transform: scale(0.95); opacity: 0; }
-
-        .reveal-visible {
-            opacity: 1 !important;
-            transform: translate(0, 0) scale(1) !important;
-        }
-
-        /* Staggered Children Support */
-        .stagger-children > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal-visible.stagger-children > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
+<style>
+        .glow-input:focus { box-shadow: 0 0 15px rgba(255,0,0,0.2); border-bottom-color: #FF0000 !important; }
+        .glow-button:hover { box-shadow: 0 0 20px rgba(255,0,0,0.4); }
+        .dark-map-filter { filter: grayscale(100%) invert(92%) contrast(83%); }
     </style>
 </head>
-<body class="selection:bg-primary/20">
-<!-- Navigation bar -->
-<nav class="fixed top-0 w-full z-[100] border-b border-white/10 bg-black/80 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <a href="index.html" class="flex items-center gap-3">
-                <img alt="Africentric Logo" class="h-8 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALCzTiQ4UoTB6217COWHqiasmslvu_9ajQk47Wl1MV9VcJqi1O7Jg9G7vWgc6RLxi0Lrhp6KE6Dm-MKho7-exW-BJY4YjtvXjqMQTRW8cvoHjCh7unZAuxKl6dwvIfsBHeuPVH6Vob50yycQn56adTw-gLfpsTt_RvF1NsPW2Q01sww57_yJnra-UuFMn0XAMqMohPAE-dYLJ8zLR0YvlUYzz-mVM3mGC-S2KzD1HMprW4s5YssM8ZpYtwMrHawnGE-GqG7V0dhqY"/>
-            </a>
-        </div>
-        <div class="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.2em] font-medium">
-            <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-            <a href="about.html" class="hover:text-primary transition-colors">About</a>
-            <div class="relative group">
-                <a href="services.html" class="flex items-center gap-2 hover:text-primary transition-colors py-8">
-                    Services
-                    <span class="material-symbols-outlined text-sm">expand_more</span>
-                </a>
-                <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-zinc-950 border border-white/10 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
-                    <a href="enterprise.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Enterprise Solutions</a>
-                    <a href="training.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Training & Academy</a>
-                    <a href="products.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Proprietary Products</a>
-                    <a href="careers.html" class="block px-4 py-3 text-white/60 hover:text-primary hover:bg-white/5 text-[10px] tracking-widest transition-all">Careers</a>
-                </div>
-            </div>
-            <a href="blog.html" class="hover:text-primary transition-colors">Blog</a>
-            <a href="contact.html" class="text-primary transition-colors">Contact</a>
-        </div>
-        <div class="flex items-center gap-6">
-            <button class="md:hidden text-white/70">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
-        </div>
-    </div>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+<nav class="border-b border-slate-100 dark:border-slate-800 py-6">
+<div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+<img alt="Africentric Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxOhuxp7UIPg_Pe0vveHWMfNk9kKZMZgTXHhFvAdSaDn_tAPsYV27pCVTA5gJPjK7GDfzKE-uGL2hPg3981WoCVo8IHKXiSuQr4YzSWMPOfa1EH0l3Pl7hr7r3ME2DdAcFAbP1HEvY4xbVjaVTxF-0H-9MA-Nkb8ZYGb2zo9zw136gftQAILNVs1-yBSZOMIIJV9Q0Zd52ZEnqAS3zlb7UU2XJ7rVZDDcNw9IHSEHzYB4vjWxiQxIKxAQI9oKauxfupaz8GBDY2hw"/>
+<div class="flex items-center gap-8">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons text-xl block dark:hidden">dark_mode</span>
+<span class="material-icons text-xl hidden dark:block">light_mode</span>
+</button>
+<a class="font-medium text-sm tracking-widest uppercase hover:text-primary" href="services.html">Solutions</a>
+<a class="font-medium text-sm tracking-widest uppercase hover:text-primary" href="products.html">Innovation</a>
+<a class="font-bold text-sm tracking-widest uppercase text-primary border-b-2 border-primary pb-1" href="contact.html">Contact</a>
+</div>
+</div>
 </nav>
-
-<header class="relative pt-48 pb-32 overflow-hidden reveal-up">
-<div class="max-w-7xl mx-auto px-6">
-<div class="max-w-3xl">
-<span class="text-primary text-[10px] font-bold uppercase tracking-[0.6em] mb-10 block">Global Infrastructure</span>
-<h1 class="font-display text-6xl md:text-9xl font-extralight tracking-tighter leading-none mb-12">
-                Initiate <br/><span class="italic font-normal">Protocol</span>.
-            </h1>
-<p class="text-xl text-zinc-500 font-light leading-relaxed max-w-2xl mb-12">
-                Connect with our lead architects to discuss high-stakes engineering, neural integrations, or continental scaling strategies.
-            </p>
+<main class="max-w-7xl mx-auto px-6 py-20">
+<div class="w-full h-[400px] mb-12 overflow-hidden rounded-lg">
+<img alt="Innovation District Office" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600"/>
 </div>
+<div class="mb-20">
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6 leading-none">Let's Build <br/><span class="text-primary italic">Africa's Future</span></h1>
+<p class="text-xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">Connect with our expert team to scale your technology solutions across the continent and beyond.</p>
 </div>
-</header>
-
-<section class="py-24 border-t border-white/5">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-24 reveal-up">
-<div class="space-y-16">
+<div class="grid lg:grid-cols-2 gap-24">
+<section>
+<div class="mb-10 overflow-hidden rounded-lg h-64">
+<img alt="Professional consulting environment" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1600"/>
+</div>
+<form class="space-y-10">
 <div>
-<h4 class="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8 font-bold">Lagos Innovation Hub</h4>
-<p class="text-xl font-light">12/14 Digital Square, <br/>Victoria Island, Lagos, Nigeria</p>
+<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Your Name</label>
+<input class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg" placeholder="John Doe" type="text"/>
 </div>
+<div class="grid md:grid-cols-2 gap-10">
 <div>
-<h4 class="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8 font-bold">Nairobi Lab</h4>
-<p class="text-xl font-light">Silicon Savannah Heights, <br/>Westlands, Nairobi, Kenya</p>
+<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Work Email</label>
+<input class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg" placeholder="john@company.com" type="email"/>
 </div>
 <div>
-<h4 class="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8 font-bold">Electronic Dispatch</h4>
-<p class="text-xl font-light text-primary underline underline-offset-8 decoration-primary/30">connect@africentric.tech</p>
-</div>
-</div>
-<div class="bg-white/[0.02] border border-white/5 p-12 lg:p-16">
-<form class="space-y-8">
-<div class="grid md:grid-cols-2 gap-8">
-<div class="flex flex-col gap-2">
-<label class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Signal Identity</label>
-<input class="form-input" placeholder="Full Name" type="text"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Return Coordinates</label>
-<input class="form-input" placeholder="Email Address" type="email"/>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Objective</label>
-<select class="form-input appearance-none">
-<option>Enterprise Architecture</option>
-<option>Neural Solutions</option>
-<option>Training Fellowship</option>
-<option>Inquiry</option>
+<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Subject</label>
+<select class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg appearance-none">
+<option>Inquiry Type</option>
+<option>Tech Partnership</option>
+<option>Innovation Consulting</option>
+<option>Cloud Migration</option>
+<option>Other</option>
 </select>
 </div>
-<div class="flex flex-col gap-2">
-<label class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Data Brief</label>
-<textarea class="form-input h-48 resize-none" placeholder="Message Transcript..."></textarea>
 </div>
-<button class="w-full bg-primary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-black transition-all">Transmit Signal</button>
+<div>
+<label class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Tell us about your project</label>
+<textarea class="w-full bg-transparent border-0 border-b border-slate-200 dark:border-slate-800 py-4 px-0 focus:ring-0 glow-input text-lg resize-none" placeholder="Briefly describe your goals..." rows="4"></textarea>
+</div>
+<button class="group inline-flex items-center gap-4 bg-primary text-white px-10 py-5 font-bold tracking-widest uppercase glow-button transition-all" type="submit">
+Send Inquiry <span class="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
 </form>
+</section>
+<section class="space-y-12">
+<div>
+<h3 class="text-xs uppercase tracking-widest font-bold text-primary mb-4">Location</h3>
+<p class="text-xl leading-relaxed text-slate-700 dark:text-slate-300">Innovation District, Lagos <br/> Nigeria, West Africa</p>
 </div>
+<div>
+<h3 class="text-xs uppercase tracking-widest font-bold text-primary mb-4">Communication</h3>
+<p class="text-xl leading-relaxed text-slate-700 dark:text-slate-300">
+<a class="hover:text-primary block" href="mailto:hello@africentric.tech">hello@africentric.tech</a>
+<a class="hover:text-primary block" href="tel:+23400000000">+234 1 234 5678</a>
+</p>
 </div>
+<div class="w-full h-96 relative overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-2xl">
+<iframe allowfullscreen="" class="absolute inset-0 w-full h-full dark:opacity-60 dark-map-filter" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.728551461973!2d3.3773173!3d6.428135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b15091a0f9b%3A0x7d06e23b207a977d!2sLagos!5e0!3m2!1sen!2sng!4v1625000000000!5m2!1sen!2sng" style="border:0;"></iframe>
 </div>
 </section>
-
-<footer class="py-20 border-t border-white/5">
-<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] tracking-[0.3em] font-bold text-zinc-700">
-<p>© 2024 Africentric Technology Hub. Excellence Orchestrated.</p>
+</div>
+</main>
+<footer class="mt-20 border-t border-slate-100 dark:border-slate-800 py-12">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<span class="text-sm font-bold tracking-widest uppercase opacity-50">© 2024 Africentric Technology Hub</span>
+<div class="flex gap-8 text-xs font-bold tracking-widest uppercase opacity-50">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
 </div>
 </footer>
-<script src="animations.js" defer></script>
 </body></html>
