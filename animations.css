@@ -1,0 +1,87 @@
+/* 
+    Premium Scroll Variations Library
+    These classes define the starting state of an element before it scrolls into view.
+    When the Intersection Observer detects the element, it appends '.reveal-visible',
+    which transitions the element into its final state (opacity 1, transform 0).
+*/
+
+/* Core Settings */
+.reveal-base {
+    opacity: 0;
+    transition-duration: 1000ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* 1. Slide Up (Default/Fallback) */
+.reveal-up {
+    transform: translateY(40px);
+}
+
+/* 2. Slide Down */
+.reveal-down {
+    transform: translateY(-40px);
+}
+
+/* 3. Glide Left (From right to left) */
+.reveal-left {
+    transform: translateX(60px);
+}
+
+/* 4. Glide Right (From left to right) */
+.reveal-right {
+    transform: translateX(-60px);
+}
+
+/* 5. Scale In (Subtle zoom) */
+.reveal-scale-in {
+    transform: scale(0.92);
+}
+
+/* 6. Scale Out (Subtle zoom out) */
+.reveal-scale-out {
+    transform: scale(1.08);
+}
+
+/* 7. Blur Up (Premium cinematic reveal) */
+.reveal-blur-up {
+    transform: translateY(30px);
+    filter: blur(10px);
+}
+
+/* 8. 3D Flip Up (For cards/technical elements) */
+.reveal-flip-up {
+    transform: perspective(1000px) rotateX(-20deg) translateY(30px);
+    transform-origin: top;
+}
+
+/* 9. 3D Flip Left (For showcase elements) */
+.reveal-flip-left {
+    transform: perspective(1000px) rotateY(-20deg) translateX(30px);
+}
+
+/* Staggered Children Delay Settings */
+.stagger-children > * {
+    opacity: 0;
+    transition-duration: 800ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.stagger-children.reveal-visible > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* Stagger starting states map to the parent's base class */
+.stagger-children.reveal-up > * { transform: translateY(30px); }
+.stagger-children.reveal-scale-in > * { transform: scale(0.95); }
+.stagger-children.reveal-blur-up > * { transform: translateY(20px); filter: blur(8px); }
+.stagger-children.reveal-flip-up > * { transform: perspective(1000px) rotateX(-15deg); }
