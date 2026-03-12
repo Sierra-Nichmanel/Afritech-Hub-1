@@ -310,5 +310,5 @@ View Schedules <span class="material-icons">arrow_downward</span>
         if(themeToggleBtn) themeToggleBtn.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); });
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); }
     </script>
-    <script src="animations.js"></script>
+    <script src="animations.js" type="module"></script>
 </body></html>
