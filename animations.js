@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Intersection Observer Setup
     // -------------------------------------------------------------
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -133,12 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el.classList.contains('stagger-children')) {
             const children = el.children;
             Array.from(children).forEach((child, i) => {
-                // Determine a slight varied delay based on configuration
-                child.style.transitionDelay = \`\${(i * 0.15) + 0.1}s\`;
+                child.style.transitionDelay = `${(i * 0.08) + 0.05}s`;
                 child.classList.add('reveal-child');
             });
         }
         
-        observer.observe(el);
+        // Use requestAnimationFrame to ensure immediate check doesn't block main thread
+        requestAnimationFrame(() => {
+            observer.observe(el);
+        });
     });
 });

@@ -8,9 +8,10 @@
 /* Core Settings */
 .reveal-base {
     opacity: 0;
-    transition-duration: 1000ms;
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-duration: 800ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform, filter;
+    backface-visibility: hidden;
 }
 
 .reveal-visible {
@@ -21,22 +22,22 @@
 
 /* 1. Slide Up (Default/Fallback) */
 .reveal-up {
-    transform: translateY(40px);
+    transform: translateY(30px);
 }
 
 /* 2. Slide Down */
 .reveal-down {
-    transform: translateY(-40px);
+    transform: translateY(-30px);
 }
 
 /* 3. Glide Left (From right to left) */
 .reveal-left {
-    transform: translateX(60px);
+    transform: translateX(40px);
 }
 
 /* 4. Glide Right (From left to right) */
 .reveal-right {
-    transform: translateX(-60px);
+    transform: translateX(-40px);
 }
 
 /* 5. Scale In (Subtle zoom) */
@@ -69,9 +70,10 @@
 /* Staggered Children Delay Settings */
 .stagger-children > * {
     opacity: 0;
-    transition-duration: 800ms;
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-duration: 700ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
+    backface-visibility: hidden;
 }
 
 .stagger-children.reveal-visible > * {
@@ -85,3 +87,20 @@
 .stagger-children.reveal-scale-in > * { transform: scale(0.95); }
 .stagger-children.reveal-blur-up > * { transform: translateY(20px); filter: blur(8px); }
 .stagger-children.reveal-flip-up > * { transform: perspective(1000px) rotateX(-15deg); }
+
+/* Global Card/Group Image Hover Zoom */
+.group:hover img, 
+.team-card:hover img, 
+.value-card:hover img,
+article:hover img {
+    transform: scale(1.05) !important;
+}
+
+/* Ensure smooth transition on all animatable images */
+.group img,
+.team-card img,
+.value-card img,
+article img {
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: transform;
+}

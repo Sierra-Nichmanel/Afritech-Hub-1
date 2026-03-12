@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#ff6b6b];
+  }
+}
+
+@layer components {
+  .grid-pattern {
+    background-image: 
+        linear-gradient(to right, rgba(239, 68, 68, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .nav-blur {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+  }
+  .job-card {
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .job-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.02);
+      border-color: rgba(239, 68, 68, 0.3);
+  }
+  .red-glow {
+      box-shadow: 0 0 40px -10px rgba(239, 68, 68, 0.3);
+  }
+  .text-balanced {
+      text-wrap: balance;
+  }
+}

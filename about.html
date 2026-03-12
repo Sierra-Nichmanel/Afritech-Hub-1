@@ -7,16 +7,9 @@
 <meta name="description" content="Learn about Africentric Technology Hub – our mission, team, and purpose of driving Africa's tech revolution."/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<script>
-    tailwind.config = {
-        darkMode:"class",
-        theme:{ extend:{ colors:{ primary:"#E11D48", "background-light":"#F8FAFC", "background-dark":"#020617" }, fontFamily:{ display:["Montserrat","sans-serif"], sans:["Inter","sans-serif"] } } }
-    };
-</script>
+<link href="style.css" rel="stylesheet"/>
 <style>
     .text-gradient { background: linear-gradient(135deg, #E11D48, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .team-card:hover img { transform: scale(1.05); }
     .value-card { border-left: 4px solid transparent; transition: all 0.3s ease; }
     .value-card:hover { border-left-color: #E11D48; }
 </style>
@@ -109,7 +102,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+<section class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
 <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full translate-x-40 -translate-y-20 blur-3xl"></div>
 <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-2 lg:gap-20 items-center">
 <div>
