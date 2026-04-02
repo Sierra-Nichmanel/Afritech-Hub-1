@@ -35,19 +35,6 @@ const navHtml = `<!-- NAVBAR -->
             </div>
         </div>
 
-        <!-- Blog Dropdown (CSS Only) -->
-        <div class="relative group">
-            <a class="hover:text-[#E11D48] transition-colors text-slate-700 dark:text-slate-200 flex items-center gap-1 cursor-pointer" href="blog.html">
-                Blog ${svgExpand}
-            </a>
-            <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left -translate-y-2 group-hover:translate-y-0">
-                <div class="py-2">
-                    <a href="case-studies.html" class="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-[#E11D48]">Case Studies</a>
-                    <a href="blog.html" class="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-[#E11D48]">Insights</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Contact Button -->
         <a href="contact.html" class="bg-[#E11D48] text-white hover:bg-white hover:text-[#E11D48] border border-transparent hover:border-[#E11D48] px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)]">
             Contact
@@ -71,13 +58,6 @@ const navHtml = `<!-- NAVBAR -->
                 <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="enterprise.html">Enterprise</a>
                 <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="products.html">Products</a>
                 <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="training.html">Training</a>
-            </div>
-        </div>
-        <div class="py-2 border-t border-slate-100 dark:border-slate-800/50">
-            <a href="blog.html" class="block font-medium text-slate-700 dark:text-slate-200 mb-2 hover:text-[#E11D48]">Blog</a>
-            <div class="pl-4 space-y-2 border-l-2 border-slate-100 dark:border-slate-800">
-                <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="case-studies.html">Case Studies</a>
-                <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="blog.html">Insights</a>
             </div>
         </div>
         <a class="block py-2 font-medium text-slate-700 dark:text-slate-200 hover:text-[#E11D48] border-t border-slate-100 dark:border-slate-800/50" href="contact.html">Contact</a>
