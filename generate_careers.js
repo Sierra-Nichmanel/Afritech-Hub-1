@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+const fs = require('fs');
+
+const htmlContent = `<!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -19,66 +21,7 @@
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
 
 <!-- Placeholder for Navbar -->
-<!-- NAVBAR -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-    <div class="flex items-center gap-3">
-        <a href="index.html" class="flex items-center gap-3">
-            <img alt="Africentric Logo" class="h-12 w-auto" src="assets/official_logo.png"/>
-            <div class="hidden md:block">
-                <span class="block text-xl font-display font-extrabold leading-none text-slate-900 dark:text-white">africentric</span>
-                <span class="block text-[9px] tracking-[0.25em] font-bold text-[#E11D48] uppercase">Technology Hub</span>
-            </div>
-        </a>
-    </div>
-
-    <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-        <a class="hover:text-[#E11D48] transition-colors text-slate-700 dark:text-slate-200" href="index.html">Home</a>
-        <a class="hover:text-[#E11D48] transition-colors text-slate-700 dark:text-slate-200" href="about.html">About</a>
-        
-        <!-- Services Dropdown (CSS Only) -->
-        <div class="relative group">
-            <a class="hover:text-[#E11D48] transition-colors text-slate-700 dark:text-slate-200 flex items-center gap-1 cursor-pointer" href="services.html">
-                Services <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </a>
-            <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left -translate-y-2 group-hover:translate-y-0">
-                <div class="py-2">
-                    <a href="enterprise.html" class="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-[#E11D48]">Enterprise</a>
-                    <a href="products.html" class="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-[#E11D48]">Products</a>
-                    <a href="training.html" class="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-[#E11D48]">Training</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Button -->
-        <a href="contact.html" class="bg-[#E11D48] text-white hover:bg-white hover:text-[#E11D48] border border-transparent hover:border-[#E11D48] px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)]">
-            Contact
-        </a>
-    </div>
-
-    <!-- Mobile Menu Toggle Button -->
-    <button class="md:hidden text-slate-900 dark:text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden');">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-    </button>
-</div>
-
-<!-- Mobile Menu Dropdown -->
-<div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 shadow-2xl">
-    <div class="px-4 py-4 space-y-2">
-        <a class="block py-2 font-medium text-slate-700 dark:text-slate-200 hover:text-[#E11D48]" href="index.html">Home</a>
-        <a class="block py-2 font-medium text-slate-700 dark:text-slate-200 hover:text-[#E11D48]" href="about.html">About</a>
-        <div class="py-2 border-t border-slate-100 dark:border-slate-800/50">
-            <a href="services.html" class="block font-medium text-slate-700 dark:text-slate-200 mb-2 hover:text-[#E11D48]">Services</a>
-            <div class="pl-4 space-y-2 border-l-2 border-slate-100 dark:border-slate-800">
-                <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="enterprise.html">Enterprise</a>
-                <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="products.html">Products</a>
-                <a class="block py-1 text-sm text-slate-600 dark:text-slate-400 hover:text-[#E11D48]" href="training.html">Training</a>
-            </div>
-        </div>
-        <a class="block py-2 font-medium text-slate-700 dark:text-slate-200 hover:text-[#E11D48] border-t border-slate-100 dark:border-slate-800/50" href="contact.html">Contact</a>
-    </div>
-</div>
-</nav>
+<nav id="main-nav"></nav>
 
 <!-- HERO / HEADING -->
 <section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -272,45 +215,7 @@ We are a team of thinkers, builders, and problem-solvers driven by excellence, c
 </section>
 
 <!-- Placeholder for Footer -->
-<footer class="bg-slate-950 text-white pt-16 pb-10">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12 border-b border-slate-900 pb-12">
-<div class="col-span-2">
-<div class="flex items-center gap-3 mb-6">
-<img alt="Africentric Logo" class="h-12 w-auto" src="assets/official_logo.png"/>
-<div>
-<span class="block text-xl font-display font-extrabold leading-none">africentric</span>
-<span class="block text-[9px] tracking-[0.25em] font-bold text-primary uppercase">Technology Hub</span>
-</div>
-</div>
-<p class="text-slate-500 text-sm leading-relaxed max-w-xs">Africa's premier technology partner — building digital foundations for the next generation of enterprise.</p>
-</div>
-<div>
-<h4 class="font-bold mb-6 text-white uppercase text-xs tracking-widest">Solutions</h4>
-<ul class="space-y-3 text-sm text-slate-500">
-<li><a class="hover:text-primary" href="services.html">Services</a></li>
-<li><a class="hover:text-primary" href="products.html">Products</a></li>
-<li><a class="hover:text-primary" href="enterprise.html">Enterprise</a></li>
-<li><a class="hover:text-primary" href="training.html">Training</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-6 text-white uppercase text-xs tracking-widest">Company</h4>
-<ul class="space-y-3 text-sm text-slate-500">
-<li><a class="hover:text-primary" href="about.html">About Us</a></li>
-<li><a class="hover:text-primary" href="contact.html">Contact</a></li>
-</ul>
-</div>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-xs text-slate-600">© 2024 Africentric Technology Hub. All rights reserved.</p>
-<div class="flex gap-6 text-xs text-slate-600">
-<a class="hover:text-white" href="#">Privacy Policy</a>
-<a class="hover:text-white" href="#">Terms of Service</a>
-</div>
-</div>
-</div>
-</footer>
+<footer id="main-footer"></footer>
 
 <!-- THEME TOGGLE -->
 <div class="fixed bottom-6 right-6 z-50">
@@ -329,4 +234,7 @@ We are a team of thinkers, builders, and problem-solvers driven by excellence, c
 </script>
 <script src="animations.js" type="module"></script>
 </body>
-</html>
+</html>`;
+
+fs.writeFileSync('careers.html', htmlContent);
+console.log('careers.html successfully written!');

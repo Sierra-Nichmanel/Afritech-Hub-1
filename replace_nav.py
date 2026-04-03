@@ -6,7 +6,7 @@ NAV_HTML = """<!-- NAVBAR -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
     <div class="flex items-center gap-3">
         <a href="index.html" class="flex items-center gap-3">
-            <img alt="Africentric Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR5UdIrNd_8ZiHIVQAonZEv2dVpezt0e-yDAw9oOK84AVRr82Ka13d0pwZZTjyANg6KoVKubUjkSyIFag73KaHXAtYfhKAO8ATKqMj4zMlhaCvqgstPTQhs3wpF2GxQL8CavBiBTvGOKmjn73dVmQ28OfF9gmZvg6dRN9TSNh00wSaWoo-ayE2QiqExxQdtHoookfIWSKMGAxxi0wk5maR34o1u8-TJcANqUkVq0VhiZ1dDBZn1G9EbwIn47ZQ3wxNzCNol1u-QF4"/>
+            <img alt="Africentric Logo" class="h-12 w-auto" src="assets/official_logo.png"/>
             <div class="hidden md:block">
                 <span class="block text-xl font-display font-extrabold leading-none text-slate-900 dark:text-white">africentric</span>
                 <span class="block text-[9px] tracking-[0.25em] font-bold text-[#E11D48] uppercase">Technology Hub</span>
@@ -65,7 +65,7 @@ NAV_HTML = """<!-- NAVBAR -->
 pages = [
     "index.html", "about.html", "services.html", "products.html", 
     "enterprise.html", "contact.html", "training.html", 
-    "blog.html", "case-studies.html"
+    "careers.html", "blog.html", "case-studies.html"
 ]
 
 for p in pages:

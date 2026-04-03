@@ -16,8 +16,8 @@
 
 .reveal-visible {
     opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
+    transform: translate(0) scale(1) perspective(1000px) rotateX(0) rotateY(0) !important;
+    filter: blur(0) !important;
 }
 
 /* 1. Slide Up (Default/Fallback) */
@@ -93,7 +93,7 @@
 .team-card:hover img, 
 .value-card:hover img,
 article:hover img {
-    transform: scale(1.05) !important;
+    transform: scale(1.05) translate(0) !important;
 }
 
 /* Ensure smooth transition on all animatable images */
@@ -101,6 +101,6 @@ article:hover img {
 .team-card img,
 .value-card img,
 article img {
-    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    will-change: transform;
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1), opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), filter 800ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: transform, opacity, filter;
 }

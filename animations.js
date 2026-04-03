@@ -15,7 +15,14 @@ function initAnimations() {
     const currentPath = window.location.pathname.split('/').filter(Boolean).pop() || 'index.html';
     
     // Select semantic tags to animate
-    const animatableElements = document.querySelectorAll('section > div > h1, section > div > h2, section > div > h3, section > div > p, article, .team-card, .value-card');
+    const rawElements = document.querySelectorAll('h1, h2, h3, h4, p, img, article, .team-card, .value-card, .job-card');
+    const animatableElements = Array.from(rawElements).filter(el => {
+        // Skip elements inside navbar, footer or fixed elements
+        if (el.closest('nav') || el.closest('footer') || el.closest('.fixed')) return false;
+        // Skip small icons or logos
+        if (el.classList.contains('material-icons') || el.classList.contains('material-symbols-outlined') || el.classList.contains('text-xs')) return false;
+        return true;
+    });
     const containerElements = document.querySelectorAll('.grid'); 
     
     animatableElements.forEach(el => {
@@ -32,6 +39,8 @@ function initAnimations() {
             el.classList.add('reveal-scale-in');
         } else if (currentPath.includes('enterprise.html')) {
             el.classList.add('reveal-left');
+        } else if (currentPath.includes('careers.html')) {
+            el.classList.add('reveal-scale-in');
         } else {
             el.classList.add('reveal-up');
         }
@@ -62,7 +71,9 @@ function initAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('reveal-visible');
+                setTimeout(() => {
+                    entry.target.classList.add('reveal-visible');
+                }, 50);
                 
                 // Trigger counters
                 const statNumbers = entry.target.querySelectorAll('.stat-number');
