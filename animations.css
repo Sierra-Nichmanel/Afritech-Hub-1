@@ -20,6 +20,12 @@
     filter: blur(0) !important;
 }
 
+/* Hero-specific Slower Reveal */
+.reveal-hero {
+    transition-duration: 1200ms !important;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.3, 1) !important;
+}
+
 /* 1. Slide Up (Default/Fallback) */
 .reveal-up {
     transform: translateY(30px);
